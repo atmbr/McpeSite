@@ -1,0 +1,18 @@
+{
+    "siteName": "McpeSite",
+    "baseUrl": "https://www.mcpe-site.com",
+    "theme": {
+        "primaryColor": "#3498db",
+        "secondaryColor": "#2ecc71",
+        "font": "Arial, sans-serif"
+    },
+    "features": {
+        "enableBlog": true,
+        "enableShop": false,
+        "enableForum": true
+    },
+    "seo": {
+        "metaDescription": "McpeSite - Your go-to site for Minecraft Pocket Edition resources.",
+        "keywords": ["Minecraft", "Pocket Edition", "MCPE", "Resources", "Mods"]
+    }
+}
