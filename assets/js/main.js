@@ -1,48 +1,58 @@
 const navIcon = document.querySelector('.nav__btn');
 const navCloseBtn = document.querySelector('.close__btn');
 const nav = document.querySelector('.navigation');
-const navContainer = document.querySelector('.nav__container');
+const navContainerMobile = document.querySelector('.nav__container.nav--mobile');
 const searchIcon = document.querySelector('.search__icon');
+const searchContainerMobile = document.querySelector('.search__container.search--mobile');
+const searchContainerDesktop = document.querySelector('.search__container.search--desktop');
 const searchInput = document.querySelector('.search__input');
-const searchContainer = document.querySelector('.search__container');
 
-// Abrir menu
+// Abrir menu mobile
 navIcon?.addEventListener('click', () => {
-  nav?.classList.toggle('active');
-  navContainer?.classList.toggle('active');
-  document.body.classList.toggle('scrollactive');
+  if (window.innerWidth <= 1024) {
+    nav?.classList.toggle('active')
+    navContainerMobile?.classList.toggle('active');
+    document.body.classList.toggle('scrollactive');
+  }
 });
 
-// Fechar menu
+// Fechar menu mobile
 navCloseBtn?.addEventListener('click', () => {
-  if (nav?.classList.contains('active')) {
-    nav.classList.remove('active');
-    if(navContainer?.classList.contains('active')){
-      navContainer.classList.remove('active');
-    }
-    if(searchContainer?.classList.contains('active')){
-      searchContainer.classList.remove('active');
-    }
+  console.log(1, window.innerWidth <= 1024)
+  nav?.classList.toggle('active')
 
-    document.body.classList.remove('scrollactive');
+  if (navContainerMobile?.classList.contains('active')) {
+    if(nav?.classList.contains('active'))nav?.classList.toggle('active')
+      navContainerMobile.classList.remove('active');
+
   }
+  if (searchContainerMobile?.classList.contains('active')) {
+    searchContainerMobile.classList.remove('active');
+    nav?.classList.remove('active')
+  }
+  document.body.classList.remove('scrollactive');
 });
 
 // Ícone de busca
 searchIcon?.addEventListener('click', () => {
   document.body.classList.toggle('scrollactive');
 
-  if (searchContainer?.classList.contains('active')) {
-    nav?.classList.toggle('active');
-    navContainer?.classList.remove('active');
-    document.body.classList.remove('scrollactive');
-  } else {
-    nav?.classList.toggle('active');
-    searchContainer?.classList.toggle('active');
-    searchInput.focus();
+  if (window.innerWidth <= 1024) {
+    // Mobile
+  nav?.classList.toggle('active')
 
+    searchContainerMobile?.classList.toggle('active');
+    searchContainerMobile.querySelector('.search__input').focus()
+    navContainerMobile?.classList.remove('active');
+  } else {
+    // Desktop
+    searchContainerDesktop?.classList.toggle('active');
+    searchContainerDesktop.querySelector('.search__input').focus()
   }
+
+  searchInput.focus();
 });
+
 
 
 import { postLoad } from '../../assets/js/post.js';
@@ -137,77 +147,91 @@ window.clearInput = function (input, btn) {
   }
 };
 
-// Pesquisar itens pela letra
-searchInput.addEventListener('input', (event) => {
-  setTimeout(() => {}, 1000);
-  const searchTerm = event.target.value.toLowerCase();
-  const searchInpContainer = document.querySelector('.search__inp');
-  
-  // Se digitou algo, adiciona botão de limpar (se ainda não existir)
-  if (searchTerm && !searchInpContainer.querySelector('.btn__clear')) {
-    const clearBtn = document.createElement('button');
-    clearBtn.type = 'button';
-    clearBtn.className = 'btn__clear';
-    clearBtn.onclick = () => clearInput(document.querySelector('.search__input'), clearBtn);
-    searchInpContainer.appendChild(clearBtn);
-  }
+const searchInputs = document.querySelectorAll('.search__input'); // Todos os campos de busca (mobile + desktop)
 
-  // Se apagou tudo, remove botão de limpar
-  if (!searchTerm) {
-    const clearBtn = searchInpContainer.querySelector('.btn__clear');
-    if (clearBtn) clearBtn.remove();
-  }
+searchInputs.forEach(input => {
+  input.addEventListener('input', (event) => {
+    const searchTerm = event.target.value.toLowerCase();
+    const isMobile = event.target.closest('.search--mobile') !== null;
 
-  // Filtrar Carousel
-  const filteredCarousel = posts.carousel.filter(post => 
-    post.title?.toLowerCase().includes(searchTerm) || 
-    post.description?.toLowerCase().includes(searchTerm)
-  );
+    // Escolher o container certo
+    const searchInpContainer = isMobile 
+      ? document.querySelector('.search--mobile .search__inp') 
+      : document.querySelector('.search--desktop .search__inp');
 
-  // Filtrar Commands
-  const filteredCommands = posts.commands.filter(post => 
-    post.code?.toLowerCase().includes(searchTerm) ||
-    post.description?.toLowerCase().includes(searchTerm)
-  );
+    const searchResultContainer = isMobile 
+      ? document.querySelector('.search--mobile .search__result')
+      : document.querySelector('.search--desktop .search__result');
 
-  // Filtrar Maps
-  const filteredMaps = posts.maps.filter(post => 
-    post.title?.toLowerCase().includes(searchTerm) ||
-    post.description?.toLowerCase().includes(searchTerm)
-  );
+    // Criar botão de limpar se necessário
+    if (searchTerm && !searchInpContainer.querySelector('.btn__clear')) {
+      const clearBtn = document.createElement('button');
+      clearBtn.type = 'button';
+      clearBtn.className = 'btn__clear';
+      clearBtn.onclick = () => clearInput(input, clearBtn, searchResultContainer);
+      searchInpContainer.appendChild(clearBtn);
+    }
 
-  // Juntar todos os resultados
-  const allFilteredPosts = [
-    ...filteredCarousel.map(item => ({ ...item, type: 'carousel' })),
-    ...filteredCommands.map(item => ({ ...item, type: 'command' })),
-    ...filteredMaps.map(item => ({ ...item, type: 'map' }))
-  ];
+    // Se apagou tudo, remove botão de limpar
+    if (!searchTerm) {
+      const clearBtn = searchInpContainer.querySelector('.btn__clear');
+      if (clearBtn) clearBtn.remove();
+    }
 
-  // Montar HTML dos resultados
-  let postagem = '';
-  allFilteredPosts.forEach(post => {
-    const imageUrl = post.code 
-      ? "https://i.pinimg.com/736x/39/dc/ee/39dcee8b6ba09ea7004cd901326eb823.jpg" 
-      : (post.img || post.image || 'https://placehold.co/600x400'); // Fallback se img/image não existir
+    // Filtrar posts
+    const filteredCarousel = posts.carousel.filter(post => 
+      post.title?.toLowerCase().includes(searchTerm) || 
+      post.description?.toLowerCase().includes(searchTerm)
+    );
+    const filteredCommands = posts.commands.filter(post => 
+      post.code?.toLowerCase().includes(searchTerm) ||
+      post.description?.toLowerCase().includes(searchTerm)
+    );
+    const filteredMaps = posts.maps.filter(post => 
+      post.title?.toLowerCase().includes(searchTerm) ||
+      post.description?.toLowerCase().includes(searchTerm)
+    );
 
-    postagem += `
-      <a href="/post?n=${post.title.toLowerCase()}}" class="result__item" data-categoria="${post.type}">
-        <div style="width: var(--size); height: auto; overflow: hidden; position: relative;">
-          <img src="${imageUrl}" alt="${post.title || post.code}" class="result__img">
-        </div>
-        <div class="result__info">
-          <h3 class="result__title">${post.title || post.code}</h3>
-          <p class="result__description">${post.description}</p>
-        </div>
-      </a>
-    `;
+    // Juntar todos resultados
+    const allFilteredPosts = [
+      ...filteredCarousel.map(item => ({ ...item, type: 'carousel' })),
+      ...filteredCommands.map(item => ({ ...item, type: 'command' })),
+      ...filteredMaps.map(item => ({ ...item, type: 'map' }))
+    ];
+
+    // Montar HTML
+    let postagem = '';
+    allFilteredPosts.forEach(post => {
+      const imageUrl = post.code 
+        ? "https://i.pinimg.com/736x/39/dc/ee/39dcee8b6ba09ea7004cd901326eb823.jpg" 
+        : (post.img || post.image || 'https://placehold.co/600x400');
+
+      postagem += `
+        <a href="/post?n=${encodeURIComponent(post.title?.toLowerCase() || post.code?.toLowerCase())}" class="result__item" data-categoria="${post.type}">
+          <div style="width: var(--size); height: auto; overflow: hidden; position: relative;">
+            <img src="${imageUrl}" alt="${post.title || post.code}" class="result__img">
+          </div>
+          <div class="result__info">
+            <h3 class="result__title">${post.title || post.code}</h3>
+            <p class="result__description">${post.description}</p>
+          </div>
+        </a>
+      `;
+    });
+
+    // Atualizar resultados na tela
+    searchResultContainer.innerHTML = postagem;
+
+    console.log('Resultados filtrados:', allFilteredPosts);
   });
-
-  // Atualizar o container de resultados
-  document.querySelector('.search__result').innerHTML = postagem;
-
-  console.log('Resultados filtrados:', allFilteredPosts);
 });
+
+// Função para limpar o input e remover botão de limpar
+function clearInput(inputElement, clearBtn, resultContainer) {
+  inputElement.value = '';
+  if (clearBtn) clearBtn.remove();
+  if (resultContainer) resultContainer.innerHTML = `<span style="text-align: center;width: 100%;font-size: 1.1rem;font-family: 'minecraft seven', 'helvetica', arial, sans-serif;">Está buscando algo? 👀🎉<span>`;
+}
 
 
 }

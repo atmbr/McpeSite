@@ -130,7 +130,7 @@
       "title": "Mapas de Redstone!",
       "description": "Construa, automatize e resolva com as criações mais técnicas de Minecraft!",
       "btn": [
-        { "text": "Explorar mapas", "link": "#maps", "external": false }
+        { "text": "Explorar mapas", "link": "#maps", "external": false },{ "text": "Explorar mapas", "link": "#maps", "external": true }
       ],
       "type": "carousel"
     },

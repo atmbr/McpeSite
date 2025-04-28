@@ -24,41 +24,43 @@
             <h1 class="header__title">ATMCRAFT</h1>
         </div>
         <nav class="navigation" id="nav__block">
-            <div class="flex-column flex-left w-100">
+            <div class="flex-column flex-left w-100 mobile--nav">
                 <div class="header__nav ">
                     <i class="nav__icon close__btn"></i>
                     <h2 class="header__title">ATMCRAFT</h2>
                 </div>
-                <div class="search__container">
+                <div class="search__container search--mobile">
                     <div class="search__inp">
                         <input type="text" class="search__input" placeholder="Pesquisar...">
                     </div>
                     
                     <div class="search__result">
-                        <div class="result__item" data-categoria="mapa">
-                            <img src="https://placehold.co/600x400" alt="" class="result__img">
-                            <div class="result__info">
-                                <h3 class="result__title">Titulo</h3>
-                                <p class="result__description">Descrição do item</p>
-                            </div>
-                        </div>
-                        <div class="result__item" data-categoria="comando">
-                            <img src="https://i.pinimg.com/736x/39/dc/ee/39dcee8b6ba09ea7004cd901326eb823.jpg" alt="" class="result__img">
-                            <div class="result__info">
-                                <h3 class="result__title">Titulo</h3>
-                                <p class="result__description">Descrição do item</p>
-                            </div>
-                        </div>
+                        <span style="text-align: center;width: 100%;font-size: 1.1rem;font-family: 'minecraft seven', 'helvetica', arial, sans-serif;">Está buscando algo? 👀🎉</span>
                     </div>
                 </div>
-                <div class="nav__container">
+                <div class="nav__container nav--mobile">
                     <a href="/page/index.html" class="nav__link">Comandos</a>
                     <a href="/page/comandos.html" class="nav__link">Mapas</a>
                     <a href="/page/mapas.html" class="nav__link">Suporte</a>
                 </div>
+                
             </div>
-
-
+<div class="desktop--nav">
+            <div class="nav__container nav--desktop">
+                <a href="/page/index.html" class="nav__link">Comandos</a>
+                <a href="/page/comandos.html" class="nav__link">Mapas</a>
+                <a href="/page/mapas.html" class="nav__link">Suporte</a>
+            </div>
+            <div class="search__container search--desktop">
+                <div class="search__inp">
+                    <input type="text" class="search__input" placeholder="Pesquisar...">
+                </div>
+                
+                <div class="search__result">
+                    <span style="text-align: center;width: 100%;font-size: 1.1rem;font-family: 'minecraft seven', 'helvetica', arial, sans-serif;">Está buscando algo? 👀🎉</span>
+                </div>
+            </div>
+        </div>
         </nav>
         <div class="search__btn">
 
