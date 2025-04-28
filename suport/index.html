@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suporte | CommandCraft</title>
+
+  <!-- Fonts and Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/responsive.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header header-b">
+    <div class="nav__btn">
+      <i class="material-icons nav__icon">menu</i>
+    </div>
+    <div class="logo__container">
+      <h1 class="header__title"><a href="../../">ATMCRAFT</a></h1>
+    </div>
+    <nav class="navigation" id="nav__block">
+      <!-- Mobile Navigation -->
+      <div class="flex-column flex-left w-100 mobile--nav">
+        <div class="header__nav">
+          <i class="nav__icon close__btn"></i>
+          <h2 class="header__title">ATMCRAFT</h2>
+        </div>
+
+        <div class="search__container search--mobile">
+          <div class="search__inp">
+            <input type="search" class="search__input" placeholder="Pesquisar..." />
+          </div>
+          <div class="search__result">
+            <span class="search__placeholder">Está buscando algo? 👀🎉</span>
+          </div>
+        </div>
+
+        <div class="nav__container nav--mobile">
+          <a href="/commad/index.html" class="nav__link">Comandos</a>
+          <a href="/map/index.html" class="nav__link">Mapas</a>
+          <a href="/suport/index.html" class="nav__link">Suporte</a>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="desktop--nav">
+        <div class="nav__container nav--desktop">
+          <a href="/page/index.html" class="nav__link">Comandos</a>
+          <a href="/page/mapas.html" class="nav__link">Mapas</a>
+          <a href="/page/suporte.html" class="nav__link">Suporte</a>
+          
+        </div>
+
+        <div class="search__container search--desktop">
+          <div class="search__inp">
+            <input type="search" class="search__input" placeholder="Pesquisar..." />
+          </div>
+          <div class="search__result">
+            <span class="search__placeholder">Está buscando algo? 👀🎉</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="search__btn">
+      <i class="material-icons nav__icon search__icon">search</i>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="support__content">
+    <section class="support__section">
+      <h2 class="section__title">Precisa de ajuda?</h2>
+      <p class="support__intro">Se você encontrou um bug, tem dúvidas ou deseja fazer uma sugestão, use o formulário abaixo. Estamos aqui para ajudar!</p>
+      <form class="support__form" action="" method="post">
+        <div class="form__group">
+          <label for="name" class="required">Nome</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form__group">
+          <label for="email" class="required">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form__group">
+          <label for="type" >Tipo de solicitação</label>
+          <select id="type" name="type">
+            <option value="bug">Reportar Bug</option>
+            <option value="duvida">Dúvida</option>
+            <option value="sugestao">Sugestão</option>
+          </select>
+        </div>
+        <div class="form__group">
+          <label for="message" class="required">Mensagem</label >
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn__bg">Enviar</button>
+      </form>
+    </section>
+    <hr>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__social">
+      <p>Siga-nos:</p>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-discord"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    <div class="footer__content">
+      <div class="footer__links">
+        <ul>
+          <span class="nav__link">Menu</span>
+          <li class="nav__link"><a href="../page/commands">Comandos</a></li>
+          <li class="nav__link"><a href="../page/maps">Mapas</a></li>
+          <li class="nav__link"><a href="../support/index.html">Suporte</a></li>
+        </ul>
+        <ul>
+          <span class="nav__link">Suporte</span>
+          <li class="nav__link"><a href="../support/contact.html">Contato</a></li>
+          <li class="nav__link"><a href="../page/about.html">Sobre</a></li>
+          <li class="nav__link"><a href="../page/term.html">Termos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2025 ATM Craft - Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../assets/js/main.js" type="module"></script>
+</body>
+
+</html>

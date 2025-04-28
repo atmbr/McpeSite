@@ -1,125 +1,182 @@
 {
   "maps": [
-    {
-      "title": "Redstone Puzzle Map",
-      "description": "Resolva quebra-cabeças baseados em circuitos de Redstone. Ideal para testar suas habilidades técnicas no Minecraft!",
-      "img": "https://images.alphacoders.com/133/thumbbig-1333797.webp",
-      "link": [
-        {
-          "video": "",
-          "download": "https://www.minecraftmaps.com/puzzle-maps/redstone-puzzle-map"
-        }
-      ],
-      "type": "map"
-    },
-    {
-      "title": "Cubic Blocks - Redstone Adventure",
-      "description": "Explore e desbloqueie áreas resolvendo mecanismos automáticos de Redstone em um mundo cúbico!",
-      "img": "https://images5.alphacoders.com/118/thumbbig-1183450.webp",
-      "link": [
-        {
-          "video": "https://www.youtube.com/watch?v=3Pu_m0Tw5-Y",
-          "download": "https://www.minecraftmaps.com/adventure-maps/cubic-blocks"
-        }
-      ],
-      "type": "map"
-    },
-    {
-      "title": "The Factory",
-      "description": "Construa e controle uma enorme fábrica movida 100% à base de Redstone! Ideal para quem curte automação.",
-      "img": "https://images6.alphacoders.com/131/thumbbig-1313226.webp",
-      "link": [
-        {
-          "video": "",
-          "download": "https://www.minecraftmaps.com/creation-maps/the-factory"
-        }
-      ],
-      "type": "map"
-    },
-    {
-      "title": "Redstone Smart House",
-      "description": "Explore uma casa totalmente automatizada com sistemas avançados de Redstone: portas secretas, iluminação automática e mais.",
-      "img": "https://images4.alphacoders.com/136/thumbbig-1368460.webp",
-      "link": [
-        {
-          "video": "https://www.youtube.com/watch?v=YF023QI1na4",
-          "download": "https://www.minecraftmaps.com/creation-maps/redstone-smart-house"
-        }
-      ],
-      "type": "map"
-    },
-    {
-      "title": "The Redstone Lab",
-      "description": "Entre em um laboratório cheio de máquinas experimentais para desvendar todos os segredos da Redstone.",
-      "img": "https://images3.alphacoders.com/132/thumbbig-1321959.webp",
-      "link": [
-        {
-          "video": "",
-          "download": "https://www.minecraftmaps.com/creation-maps/the-redstone-lab"
-        }
-      ],
-      "type": "map"
-    },
-    {
-      "title": "Redstone Bank Heist",
-      "description": "Planeje e execute um assalto a banco usando armadilhas e engenhocas de Redstone!",
-      "img": "https://images.alphacoders.com/132/thumbbig-1325278.webp",
-      "link": [
-        {
-          "video": "https://www.youtube.com/watch?v=SYt0ZjBHbnQ",
-          "download": "https://www.minecraftmaps.com/adventure-maps/redstone-bank-heist"
-        }
-      ],
-      "type": "map"
-    }
-  ],
+  { 
+    "title": "Redstone Puzzle Map",
+    "description": "Resolva quebra-cabeças baseados em circuitos de Redstone. Ideal para testar suas habilidades técnicas no Minecraft!",
+    "img": [
+      "https://images.alphacoders.com/133/thumbbig-1333797.webp"
+    ],
+    "html":"",
+    "link": [
+      {
+        "video": "",
+        "download": "https://www.minecraftmaps.com/puzzle-maps/redstone-puzzle-map"
+      }
+    ],
+    "type": "map"
+  },
+  {
+    "title": "Cubic Blocks - Redstone Adventure",
+    "description": "Explore e desbloqueie áreas resolvendo mecanismos automáticos de Redstone em um mundo cúbico!",
+    "img": [
+      "https://images5.alphacoders.com/118/thumbbig-1183450.webp",
+      "https://images5.alphacoders.com/119/thumbbig-1193450.webp"
+    ],
+    "html":"",
+    "link": [
+      {
+        "video": "https://www.youtube.com/watch?v=3Pu_m0Tw5-Y",
+        "download": "https://www.minecraftmaps.com/adventure-maps/cubic-blocks"
+      }
+    ],
+    "type": "map"
+  },
+  {
+    "title": "The Factory",
+    "description": "Construa e controle uma enorme fábrica movida 100% à base de Redstone! Ideal para quem curte automação.",
+    "img": [
+      "https://images6.alphacoders.com/131/thumbbig-1313226.webp"
+    ],
+    "html":"",
+    "link": [
+      {
+        "video": "",
+        "download": "https://www.minecraftmaps.com/creation-maps/the-factory"
+      }
+    ],
+    "type": "map"
+  },
+  {
+    "title": "Redstone Smart House",
+    "description": "Explore uma casa totalmente automatizada com sistemas avançados de Redstone: portas secretas, iluminação automática e mais.",
+    "img": [
+      "https://images4.alphacoders.com/136/thumbbig-1368460.webp",
+      "https://images.alphacoders.com/133/thumbbig-1333797.webp"
+    ],
+    "html":"<h3>Titulo de Exemplo!!</h3><p>Descubra esta incrível base automática feita com circuitos de Redstone! Ideal para jogadores que gostam de automatização total: portas secretas, fazendas automáticas, iluminação inteligente e muito mais.</p><p>Descubra esta incrível base automática feita com circuitos de Redstone! Ideal para jogadores que gostam de automatização total: portas secretas, fazendas automáticas, iluminação inteligente e muito mais.</p><h4>Titulo de Exemplo!!</h4><ul><li>Compatível com Minecraft 1.20+</li><li>Download rápido (.rap)</li></ul>",
+    "link": [
+      {
+        "video": "https://www.youtube.com/watch?v=YF023QI1na4",
+        "download": "https://www.minecraftmaps.com/creation-maps/redstone-smart-house"
+      }
+    ],
+    "type": "map"
+  },
+  {
+    "title": "The Redstone Lab",
+    "description": "Entre em um laboratório cheio de máquinas experimentais para desvendar todos os segredos da Redstone.",
+    "img": [
+      "https://images3.alphacoders.com/132/thumbbig-1321959.webp",
+      "https://images4.alphacoders.com/136/thumbbig-1367660.webp",
+      "https://images8.alphacoders.com/135/thumbbig-1358524.webp"
+    ],
+    "html":"",
+    "link": [
+      {
+        "video": "",
+        "download": "https://www.minecraftmaps.com/creation-maps/the-redstone-lab"
+      }
+    ],
+    "type": "map"
+  },
+  {
+    "title": "Redstone Bank Heist",
+    "description": "Planeje e execute um assalto a banco usando armadilhas e engenhocas de Redstone!",
+    "img": [
+      "https://images5.alphacoders.com/135/thumbbig-1358521.webp"
+    ],
+    "html":"",
+    "link": [
+      {
+        "video": "https://www.youtube.com/watch?v=SYt0ZjBHbnQ",
+        "download": "https://www.minecraftmaps.com/adventure-maps/redstone-bank-heist"
+      }
+    ],
+    "type": "map"
+  },
+  {
+    "title": "Redstone Trials",
+    "description": "Um mapa desafiador onde cada sala apresenta uma nova mecânica de Redstone para ser dominada.",
+    "img": [
+      "https://images6.alphacoders.com/134/thumbbig-1346381.webp"
+    ],
+    "html":"",
+    "link": [
+      {
+        "video": "",
+        "download": "https://www.minecraftmaps.com/puzzle-maps/redstone-trials"
+      }
+    ],
+    "type": "map"
+  },
+  {
+    "title": "Temple of Red Mechanisms",
+    "description": "Explore um templo misterioso onde enigmas e armadilhas de Redstone protegem tesouros esquecidos.",
+    "img": [
+      "https://images8.alphacoders.com/128/thumbbig-1281520.webp",
+      "https://images7.alphacoders.com/125/thumbbig-1259209.webp"
+    ],
+    "html":"<h3>Titulo de Exemplo!!</h3><p>Descubra esta incrível base automática feita com circuitos de Redstone! Ideal para jogadores que gostam de automatização total: portas secretas, fazendas automáticas, iluminação inteligente e muito mais.</p><p>Descubra esta incrível base automática feita com circuitos de Redstone! Ideal para jogadores que gostam de automatização total: portas secretas, fazendas automáticas, iluminação inteligente e muito mais.</p><h4>Titulo de Exemplo!!</h4><ul><li>Compatível com Minecraft 1.20+</li><li>Download rápido (.rap)</li></ul>",
+    "link": [
+      {
+        "video": "https://www.youtube.com/watch?v=jK4fJZbRyxA",
+        "download": "https://www.minecraftmaps.com/adventure-maps/temple-of-red-mechanisms"
+      }
+    ],
+    "type": "map"
+  }
+],
   "commands": [
     {
       "title": "Dar Redstone",
-      "code": "/give @p minecraft:redstone 64",
+      "code":["/give @p minecraft:redstone 64","/give @p minecraft:redstone 32"], 
       "description": "Entrega uma pilha de 64 redstones para o jogador mais próximo.",
-      "img": "https://images7.alphacoders.com/124/thumbbig-1244429.webp",
+      "img": ["https://images.alphacoders.com/138/thumbbig-1383747.webp"],
       "link": [
         {
           "video": "https://www.youtube.com/watch?v=Z3x-pW-9QfI"
         }
       ],
+      "html":"",
       "type": "command"
     },
     {
       "title": "Criar bloco de comando",
-      "code": "/give @p minecraft:command_block",
+      "code": ["/setblock ~ ~ ~ minecraft:command_block","/give @p minecraft:grass 32","/give @p minecraft:grass 100"],
       "description": "Entrega um bloco de comando — necessário para fazer estruturas automáticas avançadas com Redstone.",
-      "img": "https://images.alphacoders.com/116/thumbbig-1168619.webp",
+      "img": ["https://images8.alphacoders.com/137/thumbbig-1374173.webp"],
       "link": [
         {
           "video": "https://www.youtube.com/watch?v=wztH9fK9ZJU"
         }
       ],
+      "html": "<h3>Titulo de Exemplo!!</h3><p>Descubra esta incrível base automática feita com circuitos de Redstone! Ideal para jogadores que gostam de automatização total: portas secretas, fazendas automáticas, iluminação inteligente e muito mais.</p><p>Descubra esta incrível base automática feita com circuitos de Redstone! Ideal para jogadores que gostam de automatização total: portas secretas, fazendas automáticas, iluminação inteligente e muito mais.</p><h4>Titulo de Exemplo!!</h4><ul><li>Compatível com Minecraft 1.20+</li><li>Sistemas com pistões, observers e redstone clocks</li><li>Download rápido (.zip)</li></ul>",
       "type": "command"
     },
     {
       "title": "Ativar circuito automaticamente",
-      "code": "/setblock ~ ~-1 ~ minecraft:redstone_block",
+      "code": ["/setblock ~ ~ ~ minecraft:redstone_block","/give @p minecraft:grass 32"],
       "description": "Coloca um bloco de redstone abaixo do jogador para ativar sistemas automaticamente.",
-      "img": "https://images5.alphacoders.com/117/thumbbig-1172158.webp",
+      "img": ["https://images7.alphacoders.com/137/thumbbig-1372962.webp"],
       "link": [
         {
           "video": ""
         }
       ],
+      "html":"",
       "type": "command"
     },
     {
       "title": "Criar lâmpada automática",
-      "code": "/setblock ~ ~ ~ minecraft:redstone_lamp",
+      "code": ["/setblock ~ ~ ~ minecraft:redstone_lamp","/give @p minecraft:redstone 32"],
       "description": "Cria uma lâmpada que você pode ligar/desligar com sinais de Redstone.",
-      "img": "https://images7.alphacoders.com/113/thumbbig-1130461.webp",
+      "img": ["https://images5.alphacoders.com/136/thumbbig-1367663.webp"],
       "link": [
         {
           "video": ""
         }
       ],
+      "html":"",
       "type": "command"
     }
   ],
@@ -130,7 +187,7 @@
       "title": "Mapas de Redstone!",
       "description": "Construa, automatize e resolva com as criações mais técnicas de Minecraft!",
       "btn": [
-        { "text": "Explorar mapas", "link": "#maps", "external": false }
+        { "text": "Explorar mapas", "link": "#maps", "external": false },{ "text": "Explorar mapas", "link": "#maps", "external": true }
       ],
       "type": "carousel"
     },

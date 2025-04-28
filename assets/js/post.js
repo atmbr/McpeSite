@@ -1,7 +1,7 @@
 
-export function postLoad(){
+
+export function postLoad(onlyPost){
     return new Promise((resolve, reject) => {
-    
     
         // reject('Erro: Promise rejeitada.');
     fetch('../assets/data/post.json')
@@ -10,25 +10,39 @@ export function postLoad(){
         return res.json();
       })
       .then(data => {
-        const limit = 4;
+        if(onlyPost) resolve (data);
+        function calcularLimit() {
+          const largura = window.innerWidth;
+          if (largura <= 979) return 4;
+          
+          const rootStyles = getComputedStyle(document.documentElement);
+
+          // Exemplo: pegar uma variável específica
+          const minhaVariavel = rootStyles.getPropertyValue('--margin-safe');
+          const cardLargura = 315, gap = 20, padding = Number(minhaVariavel.split('px')[0]);
+          const areaUtil = largura - padding;
+          return Math.max(1, Math.floor(areaUtil / (cardLargura + gap))) * 2;
+        }
+        
+        let limit = calcularLimit();
+        
     
         // Função para criar o card do mapa ou comando
         const createCard = ({ title, image, video, description, downloadLink, code }, isMap = true) => `
           <div class="card">
             ${isMap ? `<h4 class="card__title">${title}</h4>` : `<h4 class="card__title">${title}</h4><code class="card__code">${code}</code>`}
-            ${video ? `
-              <div class="view-card__video">
-                <iframe class="card__video" src="https://www.youtube.com/embed/${video}" title="${title || code}"></iframe>
-              </div>` :
-            image ? `
+            ${image ? `
               <div class="view-card__image">
                 <img src="${image}" alt="${title || code}" class="card__image">
-              </div>` : ""}
+              </div>`: video ? `
+              <div class="view-card__video">
+                <iframe class="card__video" src="https://www.youtube.com/embed/${video}" title="${title || code}"></iframe>
+              </div>`: ""}
             <div class="card__details">
               <p class="card__description">${description || "Sem descrição"}</p>
               ${isMap
-                ? `<a class="btn btn__bg btn__download" href="${downloadLink || '#'}" target="_blank">${downloadLink ? "Baixar Mapa" : "Download Indisponível"}</a>`
-                : `<a class="btn btn__bg btn__copy" onclick="copiarComando(this)">Copiar</a>`}
+                ? `<a class="btn btn__bg btn__download" href="../page/post.html?article=${title.toLowerCase().replaceAll(" -", "").replaceAll(" ", "-") || '#'}" target="_self">${downloadLink ? "Baixar Mapa" : "Download Indisponível"}</a>`
+                : `<a class="btn btn__bg btn__copy" href="../page/post.html?article=${title.toLowerCase().replaceAll(" -", "").replaceAll(" ", "-")||'#'}">Copiar</a>`}
             </div>
           </div>`;
     
@@ -65,18 +79,20 @@ export function postLoad(){
     
         // Função para injetar os cartões
         const injectCards = (containerSelector, items, isMap = true) => {
+          
           const container = document.querySelector(containerSelector);
           if (!container || !Array.isArray(items)) return;
     
           items.slice(0, limit > 0 ? limit : items.length).forEach(item => {
             const cardHTML = createCard({
               title: item.title,
-              image: item.img,
+              image: item.img[0],
               video: item.link?.[0]?.video?.split("v=")[1],  // extrai apenas o ID do YouTube
               description: item.description,
               downloadLink: item.link?.[0]?.download,
-              code: item.code
+              code: item.code?.[0]
             }, isMap);
+
             container.insertAdjacentHTML('beforeend', cardHTML);
           });
         };
