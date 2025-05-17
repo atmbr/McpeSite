@@ -183,11 +183,7 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
-<<<<<<< HEAD:src/css/style.css
   font-size: 1.1em;
-=======
-  font-size: 1.2em;
->>>>>>> ea9b7e601172098a5397e9ca1cc8c442011a7e98:assets/css/style.css
   --icon-size: 10px;
 }
 .nav__link a:hover{
@@ -238,11 +234,7 @@ header {
   height: auto;
 }
 /* Configurações base */
-<<<<<<< HEAD:src/css/style.css
 .nav__container.nav--mob.search__container.search--desktop.activeile {
-=======
-.nav__container.nav--mobile {
->>>>>>> ea9b7e601172098a5397e9ca1cc8c442011a7e98:assets/css/style.css
   display: none;
 }
 .nav__container.nav--desktop {
@@ -251,27 +243,19 @@ header {
   height: auto;
 }
 
-<<<<<<< HEAD:src/css/style.css
 
 
 
-=======
->>>>>>> ea9b7e601172098a5397e9ca1cc8c442011a7e98:assets/css/style.css
 /* Busca Desktop */
 .search__container.search--desktop {
   display: none;
   flex-direction: column;
-<<<<<<< HEAD:src/css/style.css
   background: var(--bg-nav-active);
-=======
-  background: red;
->>>>>>> ea9b7e601172098a5397e9ca1cc8c442011a7e98:assets/css/style.css
   height: 300px;
   position: fixed;
   left: 0;
   right: 0;
   top: calc(var(--header-height) + var(--header-padding) * 2);
-<<<<<<< HEAD:src/css/style.css
   z-index: 99;
   padding: 0;
   gap: 0;
@@ -280,35 +264,20 @@ header {
 }
 .search__container.search--desktop.active {
   display: flex;
-=======
-  padding: 10px;
-  z-index: 99; /* garantir que fique em cima de tudo */
-}
-
-.search__container.search--desktop.active {
-  display: flex;
-  background: var(--bg-nav-active);
->>>>>>> ea9b7e601172098a5397e9ca1cc8c442011a7e98:assets/css/style.css
 }
 
 /* Busca Desktop Resultados */
 .search__container.search--desktop .search__result {
   flex-wrap: wrap;
   overflow-x: auto;
-<<<<<<< HEAD:src/css/style.css
   margin-top: 20px;
-=======
->>>>>>> ea9b7e601172098a5397e9ca1cc8c442011a7e98:assets/css/style.css
 }
 
 /* Input de busca desktop */
 .search__container.search--desktop .search__inp {
   height: max-content;
   width: 100%;
-<<<<<<< HEAD:src/css/style.css
 
-=======
->>>>>>> ea9b7e601172098a5397e9ca1cc8c442011a7e98:assets/css/style.css
 }
 .nav__container{
   display: none;
@@ -429,11 +398,7 @@ main {
   gap: 10px;
 }
 .logo__container {
-<<<<<<< HEAD:src/css/style.css
   display: flex;
-=======
-  display: grid;
->>>>>>> ea9b7e601172098a5397e9ca1cc8c442011a7e98:assets/css/style.css
   justify-content: flex-start;
   align-items: center;
 }
@@ -450,12 +415,9 @@ main {
   overflow-y: auto;
 
 }
-<<<<<<< HEAD:src/css/style.css
 .search__container.search--mobile{
   gap: 40px;
 }
-=======
->>>>>>> ea9b7e601172098a5397e9ca1cc8c442011a7e98:assets/css/style.css
 .search__container.search--desktop .result__item{
   max-width: 500px;
 }
@@ -684,10 +646,6 @@ main {
   background: var(--mc-card);
   border-radius: var(--btn-border-radius);
 display: grid;
-<<<<<<< HEAD:src/css/style.css
-=======
-  padding: 1rem;
->>>>>>> ea9b7e601172098a5397e9ca1cc8c442011a7e98:assets/css/style.css
   margin-bottom: 1.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   max-width: calc(var(--car-size) - var(--pd-card) * 2);

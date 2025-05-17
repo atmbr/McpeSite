@@ -77,11 +77,7 @@
 }
     
 /* Tablets e menores: 2 colunas */
-<<<<<<< HEAD:src/css/responsive.css
 @media (max-width: 978.98px) {
-=======
-@media (max-width: 1024.98px) {
->>>>>>> ea9b7e601172098a5397e9ca1cc8c442011a7e98:assets/css/responsive.css
     .navigation{
         display: none;
     }
@@ -161,7 +157,6 @@
         ;
         flex-direction: column;
       }
-<<<<<<< HEAD:src/css/responsive.css
       
     .post__content {
         min-width: 90vw;
@@ -176,8 +171,6 @@
 }
 @media (max-width: 68.98px){
 
-=======
->>>>>>> ea9b7e601172098a5397e9ca1cc8c442011a7e98:assets/css/responsive.css
 }
 @media (max-width: 768.98px){
     
