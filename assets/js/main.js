@@ -178,7 +178,7 @@ searchInputs.forEach(input => {
       if (clearBtn) clearBtn.remove();
     }
 
-    // Filtrar posts
+    // Filtrar posts 
     const filteredCarousel = posts.carousel.filter(post => 
       post.title?.toLowerCase().includes(searchTerm) || 
       post.description?.toLowerCase().includes(searchTerm)
