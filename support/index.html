@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>supporte | CommandCraft</title>
+
+  <!-- Fonts and Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../../src/css/style.css" />
+  <link rel="stylesheet" href="../../src/css/responsive.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header header-b">
+    <div class="logo__container">
+      <h1 class="header__title"><a href="../../">ATMCRAFT</a></h1>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="support__content">
+    <section class="support__items">
+      <a href="#contact-us" class="item__support">
+        <img src="https://backiee.com/static/wallpapers/560x315/411681.jpg" alt="">
+        <div>
+          <h2>Fale Conosco</h2>
+        </div>
+      </a>
+      <a href="#" class="item__support">
+        <img src="https://backiee.com/static/wallpapers/560x315/322670.jpg" alt="">
+        <div>
+          <h2>Central de Ajuda</h2>
+        </div>
+      </a>
+      <a href="#" class="item__support">
+        <img src="https://backiee.com/static/wallpapers/560x315/394484.jpg" alt="">
+        <div>
+          <h2>FAQ</h2>
+        </div>
+      </a>
+    </section>
+    
+    <section class="reportbugs__section" id="contact-us">
+      <h2 class="section__title">Precisa de ajuda?</h2>
+      <p class="reportbugs__intro">Se você encontrou um bug, tem dúvidas ou deseja fazer uma sugestão, use o formulário abaixo. Estamos aqui para ajudar!</p>
+      <form class="reportbugs__form" action="https://formsubmit.co/aatomictl@gmail.com" method="POST">
+        <div class="form__group">
+          <label for="name" class="required">Nome</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form__group">
+          <label for="email" class="required">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form__group">
+          <label for="type" >Tipo de solicitação</label>
+          <select id="type" name="type">
+            <option value="bug">Reportar Bug</option>
+            <option value="duvida">Dúvida</option>
+            <option value="sugestao">Sugestão</option>
+          </select>
+        </div>
+        <div class="form__group">
+          <label for="message" class="required">Mensagem</label >
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn__bg">Enviar</button>
+      </form>
+    </section>
+    <hr>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__bottom">
+      <p>&copy; 2025 ATM Craft - Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../../src/js/main.js" type="module"></script>
+</body>
+
+</html>

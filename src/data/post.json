@@ -4,7 +4,7 @@
     "title": "Redstone Puzzle Map",
     "description": "Resolva quebra-cabeças baseados em circuitos de Redstone. Ideal para testar suas habilidades técnicas no Minecraft!",
     "img": [
-      "https://images.alphacoders.com/133/thumbbig-1333797.webp"
+      "https://images8.alphacoders.com/135/thumb-1920-1358524.png"
     ],
     "html":"",
     "link": [
@@ -19,8 +19,8 @@
     "title": "Cubic Blocks - Redstone Adventure",
     "description": "Explore e desbloqueie áreas resolvendo mecanismos automáticos de Redstone em um mundo cúbico!",
     "img": [
-      "https://images5.alphacoders.com/118/thumbbig-1183450.webp",
-      "https://images5.alphacoders.com/119/thumbbig-1193450.webp"
+      "https://images6.alphacoders.com/112/thumb-1920-1123556.png",
+      "https://images.alphacoders.com/135/thumb-1920-1351306.png"
     ],
     "html":"",
     "link": [
@@ -35,7 +35,7 @@
     "title": "The Factory",
     "description": "Construa e controle uma enorme fábrica movida 100% à base de Redstone! Ideal para quem curte automação.",
     "img": [
-      "https://images6.alphacoders.com/131/thumbbig-1313226.webp"
+      "https://images6.alphacoders.com/131/thumb-1920-1313226.png"
     ],
     "html":"",
     "link": [
@@ -50,8 +50,8 @@
     "title": "Redstone Smart House",
     "description": "Explore uma casa totalmente automatizada com sistemas avançados de Redstone: portas secretas, iluminação automática e mais.",
     "img": [
-      "https://images4.alphacoders.com/136/thumbbig-1368460.webp",
-      "https://images.alphacoders.com/133/thumbbig-1333797.webp"
+      "https://images6.alphacoders.com/135/thumb-1920-1357336.png",
+      "https://images2.alphacoders.com/111/thumb-1920-1114362.png"
     ],
     "html":"<h3>Titulo de Exemplo!!</h3><p>Descubra esta incrível base automática feita com circuitos de Redstone! Ideal para jogadores que gostam de automatização total: portas secretas, fazendas automáticas, iluminação inteligente e muito mais.</p><p>Descubra esta incrível base automática feita com circuitos de Redstone! Ideal para jogadores que gostam de automatização total: portas secretas, fazendas automáticas, iluminação inteligente e muito mais.</p><h4>Titulo de Exemplo!!</h4><ul><li>Compatível com Minecraft 1.20+</li><li>Download rápido (.rap)</li></ul>",
     "link": [
@@ -66,9 +66,9 @@
     "title": "The Redstone Lab",
     "description": "Entre em um laboratório cheio de máquinas experimentais para desvendar todos os segredos da Redstone.",
     "img": [
-      "https://images3.alphacoders.com/132/thumbbig-1321959.webp",
-      "https://images4.alphacoders.com/136/thumbbig-1367660.webp",
-      "https://images8.alphacoders.com/135/thumbbig-1358524.webp"
+      "https://images3.alphacoders.com/132/thumb-1920-1321959.png",
+      "https://images8.alphacoders.com/135/thumb-1920-1358515.png",
+      "https://images8.alphacoders.com/135/thumb-1920-1358524.png"
     ],
     "html":"",
     "link": [
@@ -83,9 +83,9 @@
     "title": "Redstone Bank Heist",
     "description": "Planeje e execute um assalto a banco usando armadilhas e engenhocas de Redstone!",
     "img": [
-      "https://images5.alphacoders.com/135/thumbbig-1358521.webp"
+      "https://images5.alphacoders.com/135/thumb-1920-1358521.png"
     ],
-    "html":"",
+    "html":"<p style=\"white-space-collapse: preserve; box-sizing: border-box; margin: 0px; font-size: 14px; line-height: 20px; cursor: text; padding: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; font-family: arial; background-color: rgb(255, 255, 255);\"><span style=\"box-sizing: border-box; color: rgb(206, 145, 120);\">Descubra esta incrível base automática feita com circuitos de Redstone! Ideal para jogadores que gostam de automatização total: portas secretas, fazendas automáticas, iluminação inteligente e muito mais.</span></p><p style=\"white-space-collapse: preserve; box-sizing: border-box; margin: 0px; font-size: 14px; line-height: 20px; cursor: text; padding: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; font-family: arial; background-color: rgb(255, 255, 255);\"><span style=\"box-sizing: border-box; color: rgb(206, 145, 120);\">Descubra esta incrível base automática feita com circuitos de Redstone! Ideal para jogadores que gostam de automatização total: portas secretas, fazendas automáticas, iluminação inteligente e muito mais.</span></p><p style=\"white-space-collapse: preserve; box-sizing: border-box; margin: 0px; font-size: 14px; line-height: 20px; cursor: text; padding: 0px; counter-reset: list-1 0 list-2 0 list-3 0 list-4 0 list-5 0 list-6 0 list-7 0 list-8 0 list-9 0; font-family: arial; background-color: rgb(255, 255, 255);\"><span style=\"box-sizing: border-box; color: rgb(206, 145, 120);\">Titulo de Exemplo!!</span></p>",
     "link": [
       {
         "video": "https://www.youtube.com/watch?v=SYt0ZjBHbnQ",
@@ -98,7 +98,8 @@
     "title": "Redstone Trials",
     "description": "Um mapa desafiador onde cada sala apresenta uma nova mecânica de Redstone para ser dominada.",
     "img": [
-      "https://images6.alphacoders.com/134/thumbbig-1346381.webp"
+      "https://images7.alphacoders.com/132/thumb-1920-1329405.png",
+      "https://images8.alphacoders.com/134/thumb-1920-1341773.png"
     ],
     "html":"",
     "link": [
@@ -113,8 +114,8 @@
     "title": "Temple of Red Mechanisms",
     "description": "Explore um templo misterioso onde enigmas e armadilhas de Redstone protegem tesouros esquecidos.",
     "img": [
-      "https://images8.alphacoders.com/128/thumbbig-1281520.webp",
-      "https://images7.alphacoders.com/125/thumbbig-1259209.webp"
+      "https://images5.alphacoders.com/135/thumb-1920-1358521.png",
+      "https://images7.alphacoders.com/125/thumb-1920-1259209.png"
     ],
     "html":"<h3>Titulo de Exemplo!!</h3><p>Descubra esta incrível base automática feita com circuitos de Redstone! Ideal para jogadores que gostam de automatização total: portas secretas, fazendas automáticas, iluminação inteligente e muito mais.</p><p>Descubra esta incrível base automática feita com circuitos de Redstone! Ideal para jogadores que gostam de automatização total: portas secretas, fazendas automáticas, iluminação inteligente e muito mais.</p><h4>Titulo de Exemplo!!</h4><ul><li>Compatível com Minecraft 1.20+</li><li>Download rápido (.rap)</li></ul>",
     "link": [
@@ -131,7 +132,7 @@
       "title": "Dar Redstone",
       "code":["/give @p minecraft:redstone 64","/give @p minecraft:redstone 32"], 
       "description": "Entrega uma pilha de 64 redstones para o jogador mais próximo.",
-      "img": ["https://images.alphacoders.com/138/thumbbig-1383747.webp"],
+      "img": ["https://images.alphacoders.com/138/thumb-1920-1383747.png"],
       "link": [
         {
           "video": "https://www.youtube.com/watch?v=Z3x-pW-9QfI"
@@ -144,7 +145,7 @@
       "title": "Criar bloco de comando",
       "code": ["/setblock ~ ~ ~ minecraft:command_block","/give @p minecraft:grass 32","/give @p minecraft:grass 100"],
       "description": "Entrega um bloco de comando — necessário para fazer estruturas automáticas avançadas com Redstone.",
-      "img": ["https://images8.alphacoders.com/137/thumbbig-1374173.webp"],
+      "img": ["https://images8.alphacoders.com/137/thumb-1920-1374173.png"],
       "link": [
         {
           "video": "https://www.youtube.com/watch?v=wztH9fK9ZJU"
@@ -157,7 +158,7 @@
       "title": "Ativar circuito automaticamente",
       "code": ["/setblock ~ ~ ~ minecraft:redstone_block","/give @p minecraft:grass 32"],
       "description": "Coloca um bloco de redstone abaixo do jogador para ativar sistemas automaticamente.",
-      "img": ["https://images7.alphacoders.com/137/thumbbig-1372962.webp"],
+      "img": ["https://images7.alphacoders.com/137/thumb-1920-1372962.png"],
       "link": [
         {
           "video": ""
@@ -170,7 +171,7 @@
       "title": "Criar lâmpada automática",
       "code": ["/setblock ~ ~ ~ minecraft:redstone_lamp","/give @p minecraft:redstone 32"],
       "description": "Cria uma lâmpada que você pode ligar/desligar com sinais de Redstone.",
-      "img": ["https://images5.alphacoders.com/136/thumbbig-1367663.webp"],
+      "img": ["https://images5.alphacoders.com/136/thumb-1920-1367663.png"],
       "link": [
         {
           "video": ""
@@ -183,21 +184,22 @@
   "carousel": [
     {
       "id": "1",
-      "img": "https://wallpapers.com/images/high/minecraft-aesthetic-tree-park-xwbol98mp7yal632.webp",
+      "img": "https://wallpapers.com/images/high/minecraft-aesthetic-tree-park-xwbol98mp7yal632.png",
       "title": "Mapas de Redstone!",
       "description": "Construa, automatize e resolva com as criações mais técnicas de Minecraft!",
       "btn": [
-        { "text": "Explorar mapas", "link": "#maps", "external": false },{ "text": "Explorar mapas", "link": "#maps", "external": true }
+        { "text": "Explorar Comandos", "link": "?page=command", "external": false }
       ],
       "type": "carousel"
     },
     {
       "id": "2",
-      "img": "https://images5.alphacoders.com/116/thumbbig-1168620.webp",
+      "img": "https://images5.alphacoders.com/116/thumb-1920-1168620.png",
       "title": "Aprenda Redstone",
       "description": "Guia básico para você começar a dominar o mundo da Redstone!",
       "btn": [
-        { "text": "Ver guia", "link": "#tutorial", "external": false }
+        { "text": "Explorar mapas", "link": "?page=map", "external":false },
+        { "text": "Ver guia", "link": "https://youtube.com/@atm", "external": true }
       ],
       "type": "carousel"
     },
@@ -207,17 +209,17 @@
       "title": "Casas Automatizadas",
       "description": "Conheça casas feitas 100% com Redstone: aberturas automáticas, armadilhas, cofres secretos e muito mais.",
       "btn": [
-        { "text": "Conferir projetos", "link": "#projects", "external": false }
+        { "text": "Conferir projetos", "link": "../../support/index.html", "external": false }
       ],
       "type": "carousel"
     },
     {
       "id": "4",
-      "img": "https://images2.alphacoders.com/111/thumbbig-1114362.webp",
+      "img": "https://images6.alphacoders.com/134/thumb-1920-1347028.jpeg",
       "title": "Desafios de Redstone",
       "description": "Teste suas habilidades enfrentando desafios que só os mestres da Redstone conseguem resolver!",
       "btn": [
-        { "text": "Tentar agora", "link": "#challenges", "external": false }
+        { "text": "Tentar agora", "link": "../../page/about.html", "external": false }
       ],
       "type": "carousel"
     }
