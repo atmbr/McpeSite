@@ -1,6 +1,5 @@
 import cardCreate from "../../assets/template/card.js";
 import carousel from "../../assets/template/carousel.js"
-console.log()
 export function postLoad(onlyPost){
     return new Promise((resolve, reject) => {
     
@@ -22,7 +21,8 @@ export function postLoad(onlyPost){
           const minhaVariavel = rootStyles.getPropertyValue('--margin-safe');
           const cardLargura = 315, gap = 20, padding = Number(minhaVariavel.split('px')[0]);
           const areaUtil = largura - padding;
-          return Math.max(1, Math.floor(areaUtil / (cardLargura + gap))) * 2;
+
+          return Math.max(1, Math.floor(areaUtil / (cardLargura + gap))) * 2 ;
         }
         
         let limit = calcularLimit();

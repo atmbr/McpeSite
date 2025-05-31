@@ -1,38 +1,104 @@
 :root {
+  /* Cores principais */
   --mc-green: #3C8527;
   --mc-brown: #835c3b;
   --mc-light: #1e1e1e;
   --mc-dark: #eeeeee;
   --mc-card: #2d2d2d;
-  --bg-nav-active: #171615;
-  --border-color:#85807f;
+  --mc-black: #171615;
+  --mc-card-black: #171615;
+  --mc-link: #6CC349;
+  --mc-select: #86d562;
+  --mc-border: #85807f;
+  --mc-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+
+  /* Backgrounds */
+  --bg-nav-active: var(--mc-black);
   --bg-search: var(--bg-nav-active);
+  --bg-header: rgba(38, 36, 35, .9);
   --bg-body: var(--bg-nav-active);
   --bg-footer: var(--bg-nav-active);
-  --btn-shadow: inset 0 -5px 0 #2a641c;
-  --btn-border-radius: 0px;
-  --header-height: 40px;
-  --header-bg: rgba(38, 36, 35, .9);
-  --header-padding: 15px;
-  --nav-padding: var(--header-padding);
-  --card-bg-black:#171615;
-  --margin-safe: 20px;
-  --select-item-color:#86d562;
-  --link-color:#6CC349;
+
+  /* Fontes */
+  --font-main: "Noto Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --font-mc-seven: 'Minecraft Seven', Arial, Helvetica, sans-serif;
+  --font-mc-ten: 'Minecraft Ten', Arial, Helvetica, sans-serif;
+
+  /* Tamanhos de fonte */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-md2: 1rem;
+  --font-size-lg: 1.45rem;
+  --font-size-xl: 1.6rem;
+  --font-size-xxl: 2.6rem;
+  --font-size-title: 3rem;
+  --font-size-logo: calc(var(--font-size-title) - 10px);
+
+  /* Espaçamentos */
+  --space-xs: 5px;
+  --space-sm: 10px;
+  --space-md: 20px;
+  --space-lg: 30px;
+  --space-xl: 40px;
   --pd-spot: 50px;
+  --margin-safe: var(--space-md);
+  --pd-btn-x: var(--space-md);
+  --pd-btn-y: var(--space-sm);
+
+  /* Gaps */
+  --gap-xs: 4px;
+  --gap-sm: 8px;
+  --gap-md: 10px;
+  --gap-lg: 20px;
+  --gap-xl: 30px;
+  --gap-xxl: 40px;
+
+  /* Tamanhos */
+  --line-height-title: 1.2;
+  --line-height-text: 24px;
+  --header-height: 40px;
+  --header-padding: var(--space-md);
+  --nav-padding: var(--header-padding);
   --carousel-height: 600px;
+  --carousel-list-height: 100px;
   --max-width: 900px;
---border-style:5px solid var(--border-color);
-  --clip-arrow:polygon(0% 25%, 0% 50%, 19.05% 50%, 19.05% 75%, 38.09% 75%, 38.09% 100%, 58.76% 100%, 58.76% 75%, 78.63% 75%, 78.63% 50.97%, 99.46% 50%, 99.78% 25.38%, 78.63% 25.38%, 78.63% 50%, 58.76% 50%, 58.76% 75%, 38.09% 75%, 38.09% 50%, 19.05% 50%, 19.05% 25%);
-  
+  --card-max-width: 440px;
+  --card-padding: var(--space-md);
+  --icon-size: 10px;
+  --btn-min-width: 150px;
+  --btn-max-width: 250px;
+ 
+  /* Bordas e radius */
+  --btn-border-radius: 0px;
+  --border-style: 5px solid var(--mc-border);
+  --select-item-border: 2px solid;
+  --border-radius-sm: 5px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+  --border-radius-xl: 20px;
+
+  /* Sombreamento */
+  --btn-shadow: inset 0 -5px 0 #2a641c;
+  --box-shadow: var(--mc-shadow);
+
+  /* Clipping paths */
+  --clip-arrow: polygon(0% 25%, 0% 50%, 19.05% 50%, 19.05% 75%, 38.09% 75%, 38.09% 100%, 58.76% 100%, 58.76% 75%, 78.63% 75%, 78.63% 50.97%, 99.46% 50%, 99.78% 25.38%, 78.63% 25.38%, 78.63% 50%, 58.76% 50%, 58.76% 75%, 38.09% 75%, 38.09% 50%, 19.05% 50%, 19.05% 25%);
   --clip-menu: polygon(
     0px 0px, 30px 0px, 30px 4px, 0px 4px,
     0px 13px, 30px 13px, 30px 17px, 0px 17px,
     0px 26px, 30px 26px, 30px 30px, 0px 30px
   );
-  --clip-open-tab: polygon(14.29% 0%,14.29% 28.57%,71.43% 28.57%,71.43% 85.71%,100% 85.71%,100% 0,14.29% 0%,14.29% 71.43%,0% 71.43%,0% 100%,28.57% 100%,28.57% 71.43%,57.14% 71.43%,57.14% 42.86%,28.57% 42.86%,28.57% 71.43%,14.29% 71.43%
-  );
-  --clip-close: polygon(14.29% 14.29%,14.29% 28.57%,28.57% 28.57%,28.57% 42.86%,42.86% 42.86%,42.86% 57.14%,28.57% 57.14%,28.57% 71.43%,14.29% 71.43%,14.29% 85.71%,28.57% 85.71%,28.57% 71.43%,42.86% 71.43%,42.86% 57.14%,57.14% 57.14%,57.14% 71.43%,71.43% 71.43%,71.43% 85.71%,85.71% 85.71%,85.71% 71.43%,71.43% 71.43%,71.43% 57.14%,57.14% 57.14%,57.14% 42.86%,71.43% 42.86%,71.43% 28.57%,85.71% 28.57%,85.71% 14.29%,71.43% 14.29%,71.43% 28.57%,57.14% 28.57%,57.14% 42.86%,42.86% 42.86%,42.86% 28.57%,28.57% 28.57%,28.57% 14.29%)
+  --clip-open-tab: polygon(14.29% 0%,14.29% 28.57%,71.43% 28.57%,71.43% 85.71%,100% 85.71%,100% 0,14.29% 0%,14.29% 71.43%,0% 71.43%,0% 100%,28.57% 100%,28.57% 71.43%,57.14% 71.43%,57.14% 42.86%,28.57% 42.86%,28.57% 71.43%,14.29% 71.43%);
+  --clip-close: polygon(14.29% 14.29%,14.29% 28.57%,28.57% 28.57%,28.57% 42.86%,42.86% 42.86%,42.86% 57.14%,28.57% 57.14%,28.57% 71.43%,14.29% 71.43%,14.29% 85.71%,28.57% 85.71%,28.57% 71.43%,42.86% 71.43%,42.86% 57.14%,57.14% 57.14%,57.14% 71.43%,71.43% 71.43%,71.43% 85.71%,85.71% 85.71%,85.71% 71.43%,71.43% 71.43%,71.43% 57.14%,57.14% 57.14%,57.14% 42.86%,71.43% 42.86%,71.43% 28.57%,85.71% 28.57%,85.71% 14.29%,71.43% 14.29%,71.43% 28.57%,57.14% 28.57%,57.14% 42.86%,42.86% 42.86%,42.86% 28.57%,28.57% 28.57%,28.57% 14.29%);
+
+  /* Outras predefinições */
+  --transition-fast: 0.15s;
+  --transition-normal: 0.3s;
+  --transition-slow: 0.5s;
+  --opacity-disabled: 0.5;
+  --z-index-header: 20;
+  --z-index-modal: 99;
 }
 
 
@@ -45,8 +111,12 @@
   font-family: 'Minecraft Ten';
   src: url('../fonts/MinecraftTen.woff') format('woff');
 }
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('../fonts/NotoSans.ttf') format('truetype');
+}
 
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 ::-webkit-scrollbar {
@@ -65,7 +135,8 @@
 h1,h2,h3,h4{
   margin: 10px 0;
   line-height: 100%;
-  font-family: 'Minecraft Ten', Arial, Helvetica, sans-serif;
+  font-weight: normal;
+ font-family:var(--font-mc-ten);
 }
 ul{
   list-style: none;
@@ -90,8 +161,8 @@ a[href]:hover {
     letter-spacing: .8px;
 }
 p,span,div,label{
-  font-family: "Noto Sans", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
-  line-height: 25px;
+  font-family:var(--font-main);
+  line-height: var(--line-height-text);
 }
 button {
   border: none;
@@ -102,6 +173,9 @@ button {
   padding: 0;
 }
 body {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
   margin: 0;
   font-family: Arial, sans-serif;
   background: var(--bg-body);
@@ -111,7 +185,7 @@ body.scrollactive{
   overflow: hidden;
 }
 hr{
-  border-color: var(--border-color);
+  border-color: var(--mc-border);
   width: 80%;
   max-width: var( --max-width);
 }
@@ -133,14 +207,14 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 .title{
   margin: 0;
-    font-family: 'Minecraft Ten', Arial, Helvetica, sans-serif;
+   font-family:var(--font-mc-ten);
 }
 .desc{
-  font-family: 'Minecraft Seven', Arial, Helvetica, sans-serif;
+  font-family: var(--font-mc-seven);
   font-size: .8em;
 }
 header {
-  background: var(--header-bg);
+  background: var(--bg-header);
   color: white;
   padding: var(--header-padding) calc(var(--header-padding) *2 );
   display: grid;
@@ -151,7 +225,7 @@ header {
     z-index: 20;
 }
 .header-b{
-  box-shadow: 0 4px 0 0 rgba(0, 0, 0, .25);
+  box-shadow: var(--mc-shadow);
   position: fixed;
   top: 0;
   backdrop-filter: blur(10px);
@@ -170,7 +244,7 @@ header {
   justify-content: flex-end;
 }
 .nav__icon{
-  padding: 10px;
+  padding: var(--space-sm);
   background: var(--mc-green);
   cursor: pointer;
   position: relative;
@@ -182,8 +256,8 @@ header {
   border-radius: var(--btn-border-radius);
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 1.1em;
+  gap: var(--gap-md);
+  font-size: var(--font-size-md2);
   --icon-size: 10px;
 }
 .nav__link a:hover{
@@ -207,7 +281,7 @@ header {
   grid-template-columns: 0fr 1fr 0fr;
   justify-items: center;
   align-items: center;
-  gap: 20px;
+  gap: var(--gap-lg);
   padding: var(--nav-padding);
   
 }
@@ -225,8 +299,9 @@ header {
   left: 0;
 }
 .header__title{
+  font-size: var(--font-size-logo, 2.4em);
   margin: 0;
-  font-family: 'Minecraft Ten', Arial, Helvetica, sans-serif;
+  font-family:var(--font-mc-ten);
 }
 .nav__container.nav--desktop{
   display: flex;
@@ -247,6 +322,15 @@ header {
 
 
 /* Busca Desktop */
+/* .desktop--nav > div:nth-child(2):not(.nav__container.nav--desktop){
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: calc(var(--header-height) + var(--header-padding) * 2);
+    width: 100vw;
+    background: #000000a3;
+
+} */
 .search__container.search--desktop {
   display: none;
   flex-direction: column;
@@ -259,7 +343,7 @@ header {
   z-index: 99;
   padding: 0;
   gap: 0;
-  padding: 20px;
+  padding: var(--space-md);
   border-bottom: var(--border-style);
 }
 .search__container.search--desktop.active {
@@ -297,7 +381,7 @@ header {
 .search__container{
   height: 100%;
   display: none;
-  gap: 10px;
+  gap: var(--gap-md);
   padding: 0 var(--nav-padding);
 }
 .search__container.active{
@@ -386,7 +470,7 @@ main {
   z-index: 20;
   flex-direction: column;
   align-items: flex-end;
-  gap: 20px;
+  gap: var(--gap-lg);
   max-width: 100%;
   /* background: #000000ad; */
 }
@@ -395,7 +479,7 @@ main {
   max-width: 600px;
   height: 100%;
   background: var(--bg-nav-active);
-  gap: 10px;
+  gap: var(--gap-md);
 }
 .logo__container {
   display: flex;
@@ -416,14 +500,14 @@ main {
 
 }
 .search__container.search--mobile{
-  gap: 40px;
+  gap: var(--gap-xxl);
 }
 .search__container.search--desktop .result__item{
   max-width: 500px;
 }
 .result__item{
   display: grid; 
-  gap: 10px;
+  gap: var(--gap-md);
   align-items: center;
   --size: 60px;
   grid-template-columns: var(--size) 1fr;
@@ -442,7 +526,7 @@ main {
 .result__info h3{
   min-height: 20px;
   font-size: .9rem;
-  font-family: 'Minecraft Seven', Arial, Helvetica, sans-serif;
+  font-family: var(--font-mc-seven);
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -452,7 +536,7 @@ main {
   text-overflow: ellipsis;
 }
 .result__info p{
-  font-family: "Noto Sans", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  font-family:var(--font-main);
   font-size: 0.8rem;
   margin: 0;
   display: -webkit-box;
@@ -503,31 +587,31 @@ main {
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-  background: var(--card-bg-black);
-  padding: 0 30px ;
+  background: var(--mc-card-black);
+  padding: 0 var(--space-md);
   height: max-content;
   min-height: max-content;
-  border-top: 4px solid var(--border-color);
+  border-top: 4px solid var(--mc-border);
   z-index: 10;
 }
 
 .carousel__title{
-  font-family: 'Minecraft Seven', Arial, Helvetica, sans-serif;
-    line-height: 30px;
-    font-size: 25px;
+  font-family: var(--font-mc-seven);
+    line-height: var(--line-height-title);
+    font-size: var(--font-size-xl);
     text-align: start;
 }
 .carousel__title, .carousel__desc{
   margin: 0;
   padding: 0;
   text-align: left;
-  margin-top: 30px;
+  margin-top: 20px;
   width: 80%;
 }
 .carousel__desc{
-  font-family: "Noto Sans", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
-  line-height: 20px;
-  font-size: 16px;
+  font-family:var(--font-main);
+  line-height:  var(--line-height-title);
+  font-size: var(--font-size-md);;
   letter-spacing: .5px;
   text-align: start;
 
@@ -536,7 +620,7 @@ main {
 .carousel__list{
   --size-img: 50px;
   --select-item-border: 2px solid ;
-  background: var(--card-bg-black);
+  background: var(--mc-card-black);
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -544,7 +628,7 @@ main {
     align-items: center;
     padding-top: 10px;
     height: var(--carousel-list-height);
-    gap: 10px;
+    gap: var(--gap-md);
     position: relative;
   border-top: var(--border-style);
   
@@ -563,7 +647,7 @@ main {
   cursor: pointer;
 }
 .carousel__list__item.active{
-  border: var( --select-item-border) var(--select-item-color);
+  border: var( --select-item-border) var(--mc-select);
 }
 
 .carousel__list__img{
@@ -578,11 +662,11 @@ main {
   border: none;
   cursor: pointer;
   text-decoration: none;
-  font-family: "Noto Sans", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  font-family:var(--font-main);
   align-items: center;
   gap: 5px;
   justify-content: center;
-  color: var(--link-color);
+  color: var( --mc-link);
   font-weight: bold;
   transition: none;
   margin: auto;
@@ -592,15 +676,14 @@ main {
 }
 
 .btn__more i{
-  color: var(--link-color);
+  color: var( --mc-link);
   font-size: 20px;
   transition: none;
 
 }
-.btn__more:hover ,.btn__more:hover i{
+.btn__more:hover{
   color: white;
-
-  
+  --bg-icon: white;
 }
 .btn__txt::after{
   content: '';
@@ -619,10 +702,11 @@ main {
  rotate: -90deg;
 }
 .section__title{
-  font-family: 'Minecraft Ten', Arial, Helvetica, sans-serif;
-  font-size: 2.6rem;
+ font-family:var(--font-mc-ten);
+  font-size: var(--font-size-title);
   letter-spacing: 1px;
   text-transform: uppercase;
+  font-weight: normal;
 }
 /*MAP SECTION*/
 .map__section{
@@ -645,28 +729,32 @@ main {
 .card {
   background: var(--mc-card);
   border-radius: var(--btn-border-radius);
-display: grid;
+display: flex;
+flex-direction: column;
   margin-bottom: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  max-width: calc(var(--car-size) - var(--pd-card) * 2);
-  --car-size: 440px;
-  --pd-card: 16px;
+  box-shadow: var(--mc-shadow);
+  /* max-width: calc(var(--car-size) - var(--pd-card) * 2); */
+  --car-size: var(--card-max-width, 440px);
+  --pd-card: var(--card-padding, 16px);
   padding: var(--pd-card);
 }
 .card__container{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(410px, 1fr));
+  gap: var(--gap-lg);
+  margin-top: 10px;
 }
 .card__title{
-  font-size: 22px;
+  width: 100%;
+  line-height: var(--line-height-title);
+  font-size: var(--font-size-xl);
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin: .8rem 0;
+    margin: 0 0 var(--gap-lg) 0;
 }
 .view-card__image,
 .view-card__video {
@@ -697,7 +785,7 @@ display: grid;
   align-items: flex-start;
   flex-wrap: wrap;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--gap-md);
   margin-top: 30px;
 }
 .btn {
@@ -710,12 +798,12 @@ display: grid;
   justify-content: center;
   text-decoration: none;
   width: auto;
-  font-family: "Noto Sans", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
-  gap: 10px;
-  font-size: 14px;
+  font-family:var(--font-main);
+  gap: var(--gap-md);
+  font-size: var(--font-size-md);
   font-weight: bold;
-  min-width: 150px;
-  max-width: 250px;
+  min-width: var(--btn-min-width, 150px);
+  max-width: var(--btn-max-width, 250px);
 }
 .btn__bg{
   background: var(--mc-green);
@@ -725,8 +813,15 @@ display: grid;
   border-radius: var(--btn-border-radius);
   text-decoration: none;
   box-shadow: var(--btn-shadow);
-  padding: 10px 20px;
-  font-size: 1.2em;
+  padding:var(--pd-btn-y, 20px) var(--pd-btn-x, 10px) ;
+  font-size: var(--font-size-md);
+  display: flex;
+  align-items: center;
+  gap: var(--gap-md);
+}
+.carousel__info .btn__txt{
+  padding: var(--pd-btn-y, 10px) 0 0 var(--pd-btn-x, 20px);
+
 }
 .btn__txt{
   color: white;
@@ -735,45 +830,48 @@ display: grid;
   transition: none;
   background: none;
   box-shadow: none;
-  font-size: 1.2em;
-  padding: 10px 0 0 20px;
+  font-size: var(--font-size-md);
   --icon-size: 8px;
 }
 
 
 .card__code, code {
-  font-family: 'Minecraft Seven', Arial, Helvetica, sans-serif;
-    font-size: 14px;
+  font-family: var(--font-mc-seven);
+    font-size:var(--font-size-md);
     background: #222;
     border-radius: var(--btn-border-radius);
     color: blueviolet;
-    padding: 10px;
+    padding: var(--space-sm);
     display: block;
     overflow-x: auto;
     white-space: nowrap;
-    margin: 10px 0;
+    min-height: 40px;
+    align-content: center;
+    margin: var(--space-sm) 0;
     cursor: pointer;
     height: fit-content;
 }
 .card__details {
-  gap: 20px;
+  /* gap: var(--gap-lg); */
   align-items: center;
   display: grid;
   grid-template-columns: 1fr ;
   justify-items: end;
+  align-content: space-between;
+  height: 100%;
 }
 .card__description {
-  margin: 0;
-  font-family: "Noto Sans", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  margin: 0 0 var(--gap-lg) 0;
+  font-family:var(--font-main);
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 16px;
+  font-size: var(--font-size-md);
 }
-.copy-btn {
+/* .copy-btn {
   background: var(--mc-green);
   color: white;
   border: none;
@@ -781,7 +879,7 @@ display: grid;
   cursor: pointer;
   border-radius: var(--btn-border-radius);
 
-}
+} */
 
 iframe {
   width: 100%;
@@ -800,26 +898,26 @@ footer {
   display: grid;
   align-items: center;
   justify-items: center;
-  padding: 1rem;
-  margin-top: 3rem;
+  padding: var(--space-md);
+  margin-top: var(--space-xl);
 }
 .footer__content > div{
   margin-top: 20px;
 }
 .footer__links{
   display: flex;
-  gap: 40px;
+  gap: var(--gap-xxl);
 }
 .footer__links li{
   margin: 10px 0;
   display: flex;
 }
 .footer__links li a{
-  color: var(--link-color);
-  font-size: 1rem;
+  color: var( --mc-link);
+  font-size: var(--font-size-md);
 }
 .footer__links ul li > span{
-  font-size: 1.4rem;
+  font-size: var(--font-size-xl);
   font-weight: bold;
   padding: 0.5rem var(--nav-padding);
 }
@@ -828,10 +926,10 @@ footer {
 
 }
 .footer__links li a::after{
-  background: var(--link-color) ;
+  background: var( --mc-link) ;
 }
 .footer__social{
-  font-size: 1.2rem;
+  font-size: var(--font-size-xl);
   margin-top: 0;
   background: black;
   padding: 60px 10px;
@@ -840,13 +938,14 @@ footer {
   margin-top: 0;
 }
 .footer__social i{
-  font-size: 3rem;
-  margin: 0 10px;
+  --icon-size: calc(var(--font-size-xxl) * 1.5);
+  font-size: var(--icon-size);
+  margin: 0 var(--space-sm);
 }
 .footer__bottom{
   color: gray;
-  margin-top: 20px;
-  font-size: .8rem;
+  margin-top: var(--space-md);
+  font-size: var(--font-size-md);
 }
 
 /*Post Page*/
@@ -867,7 +966,7 @@ footer {
 }
 .galery__items > div{
   display: flex;
-  gap: 10px;
+  gap: var(--gap-md);
   max-width: var( --max-width);
 
   overflow-x: auto;
@@ -893,7 +992,7 @@ footer {
 }
 
 .galery__item.active {
-  border: 2px solid var(--select-item-color);
+  border: 2px solid var(--mc-select);
 }
 
 .galery__item > img {
@@ -911,12 +1010,12 @@ footer {
 .post__content{
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: var(--space-md);
   max-width: var( --max-width);
   margin: auto;
 }
 .post__title{
-  font-family: 'Minecraft Ten', Arial, Helvetica, sans-serif;
+ font-family:var(--font-mc-ten);
   text-transform:uppercase;
   font-size: 2rem;
   letter-spacing: .6px;
@@ -925,7 +1024,7 @@ footer {
   min-width: var(--max-width);
 }
 .content__post{
-  line-height: 1.5;
+  line-height: var(--line-height-text);
   display: grid;
   margin-top: 20px;
 }
@@ -933,7 +1032,7 @@ footer {
 .content__post h3,
 .content__post h4{
   margin-top: 1.2rem;
-  font-family: 'Minecraft Seven', Arial, Helvetica, sans-serif;
+  font-family: var(--font-mc-seven);
 }
 
 /* Parágrafos */
@@ -944,7 +1043,7 @@ footer {
 /* Listas */
 .content__post ul {
   display: grid;
-  gap: 10px;
+  gap: var(--gap-md);
   margin: 20px 0;
   padding-left: 1rem;
 }
@@ -992,10 +1091,12 @@ footer {
   margin: auto;
   margin-top: 20px;
 }
-.codes{
-  font-family: 'Minecraft Seven', Arial, Helvetica, sans-serif;
-  font-size: .8em;
+.codes > *{
+  display: grid;
+  font-family: var(--font-mc-seven);
+  /* font-size: .8em; */
 }
+
 
 /*Page support*/
 .support__content{
@@ -1006,7 +1107,7 @@ footer {
 }
 .reportbugs__section{
   max-width: calc(var(--max-width) / 1.5);
-  margin: 20px;
+  margin: var(--space-md);
   display: flex;
   flex-direction: column;
 }
@@ -1064,7 +1165,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   width: 100%;
-  gap: 10px;
+  gap: var(--gap-md);
   justify-items: center;
   justify-content: center;
   max-width: clamp(300px, 100%, var(--max-width) / 1.5);
@@ -1076,7 +1177,7 @@ footer {
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  gap: 10px;
+  gap: var(--gap-md);
   justify-items: center;
   justify-content: flex-start;
   max-width: calc(var(--max-width) / 1.5);
@@ -1097,18 +1198,16 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  width: 96%;
-  height: 100%;
+  width: initial;
   background: #00000050;
   margin: auto;
   justify-items: center;
-  padding: 5px;
   align-items: center;
   max-width: 100%;
 }
 .item__support > div h2{
-  font-size: 1.8rem;
-  font-family: 'Minecraft Ten', Arial, Helvetica, sans-serif;
+  font-size: var(--font-size-xl);
+ font-family:var(--font-mc-ten);
 
   text-align: center;
 }
@@ -1124,8 +1223,11 @@ footer {
   font-family: 'Minecraft Ten', Arial, sans-serif;
       align-items: center;
 }
+.about__content p{
+  font-size: var(--font-size-md);
+}
 .about__content section{
-      max-width: calc(var(--max-width) / 1.5);
+      max-width: calc(var(--max-width) / var(--max-w, 1.5));
 }
 .about__content .btn__container{
   align-items: center;
@@ -1137,27 +1239,23 @@ footer {
   margin: auto;
 }
 .about__header h1 {
-  font-size: 2.5rem;
-}
-.about__header p {
-  font-size: 1.1rem;
+  font-size: var(--font-size-title);
 }
 
 /* BLOCO VISUAL BONITO */
 .about__showcase {
   background: linear-gradient(135deg, var(--bg-body), var(--mc-card));
-  border: 2px dashed var(--link-color);
+  border: 2px dashed var( --mc-link);
   padding: 40px 20px;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   text-align: center;
   box-shadow: 0 0 20px #09ff0080;
 }
 .showcase__decor h2 {
-  font-size: 2rem;
-  color: var(--select-item-color);
+  font-size: var(--font-size-xxl);
+  color: var(--mc-select);
 }
 .showcase__decor p {
-  font-size: 1.1rem;
   color: var(--mc-dark);
   margin-top: 10px;
 }
@@ -1166,7 +1264,7 @@ footer {
 .about__highlight {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: var(--gap-lg);
   max-width: 1000px;
   margin: auto;
   align-items: center;
@@ -1182,12 +1280,11 @@ footer {
   flex: 2 1 400px;
 }
 .about__highlight-text h2 {
-  font-size: 2rem;
+  font-size: var(--font-size-xxl);
 }
 .about__highlight-text p {
-  font-size: 1rem;
   color: var(--mc-dark);
-  line-height: 1.5;
+  line-height: var(--line-height-text);
 }
 
 /* Texto puro */
@@ -1195,79 +1292,44 @@ footer {
   max-width: var(--max-width);
   margin: auto;
   background: var(--mc-card);
-  padding: 30px;
-  border-radius: 16px;
+  padding: var(--space-md);
+  /* border-radius: 16px; */
   box-shadow: 0 0 15px #00000050;
 }
 .about__section-text h2 {
-  font-size: 1.8rem;
+  font-size: var(--font-size-xxl);
 }
 .about__section-text p {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-
-/* Cards */
-.about__cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  max-width: var(--max-width);
-  margin: auto;
-  justify-content: center;
-  --max-width: 990px;  
-
-  
-}
-.about__card {
-  background: var(--mc-card);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px #00000040;
-  flex: 1 1 250px;
-}
-.about__card h3 {
-  font-size: 1.4rem;
-}
-.about__card p {
-  font-size: 0.95rem;
-  color: var(--mc-dark);
+  line-height: var(--line-height-text);
 }
 
 /* Contato */
 .about__contact {
-  max-width: 700px;
+  max-width: var(--max-width);
   text-align: center;
   margin: auto;
-  padding: 20px;
-  background: var(--mc-card);
-  border-radius: 16px;
+  padding: var(--space-md);
+  /* background: var(--mc-card); */
 }
 .about__contact h2.section__title {
-  font-size: 1.8rem;
+  font-size: var(--font-size-xxl);
 }
-.about__intro {
-  font-size: 1rem;
-}
-
-
 
 
 .filter__block{
   padding: var(--margin-safe) 0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--gap-lg);
   background: var(--mc-card);
   margin-bottom: 20px;
-  padding: 1rem;
+  padding: var(--space-md);
 }
 
 .results__list{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  gap: var(--gap-lg);
 }
 .results__list:has(.card) {
   min-width: 800px; /* 2 x 400px */
@@ -1281,8 +1343,8 @@ footer {
 }
 
 .not__exist-title {
-  font-family: 'Minecraft Ten', Arial, Helvetica, sans-serif;
-  font-size: 2.1rem;
+ font-family:var(--font-mc-ten);
+  font-size: var(--font-size-xxl);
   text-transform: uppercase;
 }
 
@@ -1391,7 +1453,10 @@ footer {
   border-radius: var(--btn-border-radius);
 }
 .shadow {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--mc-shadow);
 }
-
+.off{
+  pointer-events: none;
+  opacity: 0.4;
+}
 

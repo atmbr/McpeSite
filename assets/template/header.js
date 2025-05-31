@@ -7,13 +7,15 @@ async function generatePage() {
         const nav = [{name:"Comando", prefix:"command", link:""},{name:"Mapa", prefix:"map", link:""},{name:"Suporte",prefix:"", link:`../../support/index.html`}]
         var navs = "";
         for (const [e, key] of Object.entries(nav)) {
-            navs += `<button type="button" class="nav__link" ${!key.link?`data-page="${key.prefix}"`:''}>${key.link?`<a href="${key.link}">${key.name}</a>`:`${key.name}`}</button>`
+            navs += `<button type="map" class="nav__link" ${!key.link?`data-page="${key.prefix}"`:''}>${key.link?`<a href="${key.link}">${key.name}</a>`:`${key.name}`}</button>`
         }
         if (!headerContainer) return;
         // Gera os cards dinamicamente
         const header = `
         <div class="nav__btn">
-            <i class="material-icons nav__icon">menu</i>
+            <button type="menu" style="color: inherit;">
+                <i class="material-icons nav__icon">menu</i>
+            </button>
         </div>
 
         <div class="logo__container">

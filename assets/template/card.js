@@ -8,14 +8,16 @@ async function generatePage(post, type) {
               :post.img[0] ||"https://placehold.co/600x400";
               return `
             <div class="card">
-                <h4 class="card__title">${post.title}</h4>
                 ${post.code ? `<code class="card__code">${post.code[0]}</code>` : ""}
                 <div class="view-card__image">
                     <img src="${imageUrl}" alt="${post.title}" class="card__image">
                 </div>
                 <div class="card__details">
+                <div>
+                    <h4 class="card__title">${post.title}</h4>
                     <p class="card__description">${post.description}</p>
-                    <a class="btn btn__bg btn__copy" href="../../page/post.html?article=${encodeURIComponent(post.title?.toLowerCase())}">
+                </div>
+                    <a class="btn btn__bg btn__copy" href="../../page/post.html?article=${encodeURIComponent(post.title?.toLowerCase())}" target="self">
                         ${post.type === "command"?'Copiar':'Baixar Mapa'}
                     </a>
                 </div>

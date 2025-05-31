@@ -71,9 +71,6 @@
         min-width: auto;
         width: 100%;
       }
-      .card{
-
-      }
 }
     
 /* Tablets e menores: 2 colunas */
@@ -101,11 +98,11 @@
         justify-content: center;
     }
     .carousel__title{
-        font-size: 1.5em;
+        font-size: var(--font-size-xl);
         text-align: left;
     }
     .carousel__desc{
-        font-size: 1em;
+        font-size: var(--font-size-sm);
         text-align: left;
     }
     .carousel__list{
@@ -131,7 +128,7 @@
         position: absolute;
         top:0; 
         height: 100vh;
-        background: #000000a3;
+        /* background: #000000a3; */
       }
       .nav__btn {
         display: flex;
@@ -157,7 +154,9 @@
         ;
         flex-direction: column;
       }
-      
+      .card{
+            max-width: none;
+      }
     .post__content {
         min-width: 90vw;
 
@@ -173,7 +172,25 @@
 
 }
 @media (max-width: 768.98px){
-    
+    :root{
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-md2: 1rem;
+    --font-size-lg: 1.45rem;
+    --font-size-xl: 1.7rem;
+    --font-size-xxl: 2.6rem;
+    --font-size-title: 3.25rem;
+  --font-size-logo: calc(var(--font-size-title) - 20px);
+
+    }
+    .card__container{
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    .map__section h3,
+    .command__section h3 {
+        font-size: 2.2em;
+    }
     .carousel__item{
         --carousel-height: 500px;
     }
@@ -225,12 +242,8 @@
     .carousel__title, .carousel__desc{
         width: 100%;
     }
-    .content__container{
-        /* --max-width:  calc(100% - 20px); */
-    }
     .content__post{
         display: grid;
-        font-weight: bold;
 
     }
     .content__post *{
@@ -241,5 +254,4 @@
     .support__content{
         padding: 20px;
     }
-    .support__items{}
 }

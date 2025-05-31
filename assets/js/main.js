@@ -77,48 +77,9 @@ function createButton({ text, link, external }) {
   return btn;
 }
 
-// Função para atualizar um item do carrossel
-function updateCarouselItem(item, config) {
-  const title = item.querySelector('.carousel__title');
-  const description = item.querySelector('.carousel__description');
-  const img = item.querySelector('.carousel__img');
-  const btnContainer = item.querySelector('.btn__container');
-
-  if (title) title.textContent = config.title || '';
-  if (description) description.textContent = config.description || '';
-  if (img && config.img) img.src = config.img;
-  
-  if (btnContainer) {
-    btnContainer.innerHTML = ''; // limpa os botões antigos
-    if (Array.isArray(config.btn)) {
-      config.btn.forEach(button => {
-        const newButton = createButton(button);
-        if (newButton) btnContainer.appendChild(newButton);
-      });
-    }
-  }
-}
-
 // Inicializar lista e adicionar eventos
 carouselList.forEach(listItem => {
-  if (listItem.dataset.config && listItem.dataset.id) {
     try {
-      const idItem = listItem.dataset.id;
-      const config = JSON.parse(listItem.dataset.config);
-
-      // Atualizar a imagem da lista de navegação
-      const listImg = listItem.querySelector('.carousel__list__img');
-      if (listImg && config.img) {
-        listImg.src = config.img;
-      }
-
-      // Atualizar o conteúdo do item correspondente
-      carouselItems.forEach(contentItem => {
-        if (contentItem.dataset.id === idItem) {
-          updateCarouselItem(contentItem, config);
-        }
-      });
-
       // Evento de clique para ativar o item
       listItem.addEventListener('click', () => {
         // Atualiza 'active' na lista
@@ -138,7 +99,7 @@ carouselList.forEach(listItem => {
     } catch (error) {
       console.error('Erro ao carregar data-config:', error);
     }
-  }
+  
 });
 window.clearInput = function (input, btn) {
   if (input?.value.length > 0) {

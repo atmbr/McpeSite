@@ -28,6 +28,7 @@ async function initHeaderFeatures() {
       nav?.classList.toggle("active");
       navContainerMobile?.classList.toggle("active");
       document.body.classList.toggle("scrollactive");
+      document.querySelector('main').classList.toggle('off');
     }
   });
 
@@ -37,12 +38,16 @@ async function initHeaderFeatures() {
       navContainerMobile?.classList.remove("active");
       searchContainerMobile?.classList.remove("active");
       document.body.classList.remove("scrollactive");
+      document.querySelector('main').classList.toggle('off');
+
     }
   });
 
   searchIcon?.addEventListener("click", () => {
     const isMobile = window.innerWidth <= mobileSize;
     document.body.classList.toggle("scrollactive");
+          document.querySelector('main').classList.toggle('off');
+
     if (isMobile) {
       nav?.classList.toggle("active");
       searchContainerMobile?.classList.toggle("active");
@@ -238,10 +243,7 @@ postLoad()
       const posts = data?.[1];
       if (!posts) return;
       // Carrossel
-      const carouselList = document.querySelectorAll(
-        ".carousel__list .carousel__list__item"
-      );
-      const carouselItems = document.querySelectorAll(".carousel__item");
+      
 
       function createButton({ text, link, external }) {
         if (!text && !link && external == null) return null;
@@ -252,61 +254,37 @@ postLoad()
         if (["https://", "http://"].some(part => link.includes(part))) btn.target = "_blank";// Faz um teste em cada item no objeto e verifica se no link inclue os valores do objeto.
         return btn;
       }
-
-      function updateCarouselItem(item, config) {
-        const titleElement = item.querySelector(".carousel__title");
-        if (titleElement) {
-          titleElement.textContent = config.title || "";
-        }
-        const descriptionElement = item.querySelector(".carousel__description");
-        if (descriptionElement) {
-          descriptionElement.textContent = config.description || "";
-        }
-        const img = item.querySelector(".carousel__img");
-        if (img && config.img) img.src = config.img;
-
-        const btnContainer = item.querySelector(".btn__container");
-        if (btnContainer && Array.isArray(config.btn)) {
-          btnContainer.innerHTML = "";
-          config.btn.forEach((button) => {
-            const newButton = createButton(button);
-            if (newButton) btnContainer.appendChild(newButton);
-          });
-        }
-      }
-
-      carouselList.forEach((listItem) => {
-        const idItem = listItem.dataset.id;
-        const configData = listItem.dataset.config;
-
-        if (idItem && configData) {
-          try {
-            const config = JSON.parse(configData);
-            const listImg = listItem.querySelector(".carousel__list__img");
-            if (listImg && config.img) listImg.src = config.img;
+      
+const observer = new MutationObserver(()=>{
+  const carouselList = document.querySelectorAll(
+        ".carousel__list .carousel__list__item"
+      );
+      const carouselItems = document.querySelectorAll(".carousel__item");
+      if(carouselList.length > 0){
+        observer.disconnect();
+        carouselList?.forEach((listItem) => {
+      const idItem = listItem.dataset.id;
+          listItem.addEventListener("click", () => {
+            carouselList.forEach((item) => item.classList.remove("active"));
+            listItem.classList.add("active");
 
             carouselItems.forEach((contentItem) => {
-              if (contentItem.dataset.id === idItem)
-                updateCarouselItem(contentItem, config);
+              contentItem.classList.toggle(
+                "active",
+                contentItem.dataset.id === idItem
+              );
             });
-
-            listItem.addEventListener("click", () => {
-              carouselList.forEach((item) => item.classList.remove("active"));
-              listItem.classList.add("active");
-
-              carouselItems.forEach((contentItem) => {
-                contentItem.classList.toggle(
-                  "active",
-                  contentItem.dataset.id === idItem
-                );
-              });
-            });
-          } catch (error) {
-            console.error("Erro ao carregar data-config:", error);
-          }
-        }
+          });
+    });
+      }
+})
+    if(document.querySelector('.hero__carousel')){
+      observer.observe(document.querySelector('.hero__carousel'), {
+        childList: true,
+        subtree: true,
       });
-
+    }
+    
       // INPUT DE BUSCA
       const searchInputs = document.querySelectorAll(".search__input");
       const filterInput = document.querySelectorAll(".filter__input");
