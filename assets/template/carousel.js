@@ -4,7 +4,7 @@ async function generatePage(post, type, index) {
         if(type === "carousel"){
         return `
           <div class="carousel__item ${index === 0 ? 'active' : ''}" data-id="${post.id}" >
-            <img src="${post.img || 'https://placehold.co/600x400'}" alt="${post.title || ''}" class="carousel__img">
+            <img loading="lazy" src="${post.img || 'https://placehold.co/600x400'}" alt="${post.title || ''}" class="carousel__img">
             <div class="carousel__info">
               <h3 class="carousel__title">${post.title || 'teste'}</h3>
               <p class="carousel__desc">${post.description || ''}</p>
@@ -26,7 +26,7 @@ async function generatePage(post, type, index) {
             <a class="carousel__list__item ${index === 0 ? 'active' : ''}" 
               data-id="${post.id}" 
               data-config='${JSON.stringify([ post.title, post.img, post.description, post.btn, post.id ]).replace(/'/g, "&apos;")}'>
-              <img src="${post.img || 'https://placehold.co/600x400'}" alt="${post.title || ''}" class="carousel__list__img">
+              <img loading="lazy" src="${post.img || 'https://placehold.co/600x400'}" alt="${post.title || ''}" class="carousel__list__img">
             </a>
         `
     }

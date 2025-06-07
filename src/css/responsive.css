@@ -184,6 +184,7 @@
   --font-size-logo: calc(var(--font-size-title) - 20px);
 
     }
+    
     .card__container{
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }

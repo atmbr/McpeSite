@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel ADM</title>
+
+    <link rel="stylesheet" href="../../src/css/style.css">
+    <link rel="stylesheet" href="../../src/css/responsive.css">
+    <style>
+        @media (max-width: 768.98px) {
+            body {
+                display: grid;
+                justify-content: center;
+                justify-items: center;
+            }
+
+            body>button {
+                width: -webkit-fill-available;
+                max-width: 100%;
+                margin: 0 var(--margin-safe);
+            }
+
+            body>h2 {
+                font-family: var(--font-mc-seven);
+                font-size: var(--font-size-md);
+                margin-top: 40px;
+            }
+
+            :root {
+                --font-size-md: 1.2rem;
+                --font-size-title: 2.8rem;
+            }
+        }
+
+        @media (max-width: 375.98px) {
+            :root {
+                --font-size-title: 2.25rem;
+            }
+
+            .section__title {
+                margin: 10px var(--margin-safe);
+            }
+
+            body {
+                padding: 0px !important;
+            }
+        }
+
+        body {
+            padding: var(--margin-safe);
+            max-width: var(--max-width);
+            font-family: Arial, sans-serif;
+            margin: auto;
+        }
+
+        form {
+            margin-bottom: 30px;
+            background: var(--mc-card);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        input,
+        textarea {
+            resize: vertical;
+            width: -webkit-fill-available;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            background: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button.edit {
+            background: #ffc107;
+            color: #333;
+            justify-content: center;
+        }
+
+        button.delete {
+            background: #dc3545;
+            justify-content: center;
+        }
+
+        .postForm.editMode {
+            display: block !important;
+        }
+
+        .post {
+            background: #fff;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px #0001;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .actions {
+            margin-top: 10px;
+        }
+
+        .listitem {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .img__upload>div {
+            max-width: 100%;
+            display: flex;
+            overflow: hidden;
+            align-content: center;
+            /* aspect-ratio: 16 / 9; */
+            gap: 10px;
+            place-content: start;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            margin-top: 10px
+        }
+
+        .img__upload img {
+            width: 300px;
+            flex: 0 0 100px;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+
+        .post-image {
+            max-width: 400px;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+
+        .btn__container {
+            flex-direction: row;
+            justify-content: flex-start;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .btn__container *::after {
+            content: none;
+        }
+
+        .img__upload {
+            margin-top: 10px;
+        }
+
+        .createpost__overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .createpost__modal {
+            background: var(--mc-card);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 300px;
+            box-shadow: 0 0 10px #0005;
+        }
+
+        .createpost__modal h2 {
+            margin-bottom: 1rem;
+        }
+
+        .createpost__options button {
+            display: block;
+            width: -webkit-fill-available;
+            margin: 8px 0;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .closeCreatePost {
+            margin-top: 12px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .postForm {
+            /* --max-width: 900px; */
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .mode__map .listcode,
+        .mode__command .listlinks,
+        .mode__carousel .listcode,
+        /* .mode__carousel .listinfo, */
+        .mode__carousel .content,
+        .mode__carousel .listlinks,
+        .postForm {
+            display: none !important;
+        }
+
+        .postForm.mode__carousel,
+        .postForm.mode__map,
+        .postForm.mode__command {
+            display: block !important;
+        }
+        .listbtn > div {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+         .listbtn > div > input[type="checkbox"] {
+            width: fit-content;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="editorjs"></div>
+    <h1 class="section__title">Painel ADM</h1>
+    <button type="button" onclick="createPost()">Criar +</button>
+    <div class="cretepost__block">
+        <!-- HTML fixo no seu documento -->
+        <div class="createpost__overlay" style="display:none;">
+            <div class="createpost__modal">
+                <h2>Escolha o tipo de postagem</h2>
+                <div class="createpost__options">
+                    <button class="btn__bg" data-type="map">🗺️ Mapas</button>
+                    <button class="btn__bg" data-type="command">💻 Comandos</button>
+                    <button class="btn__bg" data-type="carousel">🖼️ Carrossel</button>
+                </div>
+                <button class="btn__txt closeCreatePost">Fechar</button>
+            </div>
+        </div>
+
+    </div>
+    <form class="postForm" id="postForm__command" data-type="command">
+        <h2>Titulo Exeplo!!</h2>
+        <input type="hidden" id="editIndex" value="">
+        <div class="title">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" required>
+        </div>
+        <div class="description">
+            <label for="descrição">Descrição:</label>
+            <textarea id="descrição" rows="3" required></textarea>
+        </div>
+        <div class="content">
+            <label for="conteudo">Conteúdo:</label>
+            <textarea id="conteudo" rows="10" required></textarea>
+        </div>
+        <div class="lists__container listcode">
+            <div class="btn__container">
+                <button title="Adicionar item na lista" type="button" onclick="addlistitem(this)">+</button>
+                <small>Comandos</small>
+            </div>
+            <div class="listcodes"></div>
+        </div>
+
+        <div class=" lists__container listinfo">
+            <div class="btn__container">
+                <button title="Adicionar item na lista" type="button" onclick="addlistitem(this)">+</button>
+                <small>Lista</small>
+            </div>
+            <div class="listitems"></div>
+        </div>
+        <div class=" lists__container listinfo">
+            <div class="btn__container">
+                <button title="Adicionar Botão" type="button" onclick="addlistitem(this)">+</button>
+                <small>Botão</small>
+            </div>
+            <div class="listbtn">
+                <div>
+                    <div>
+                        <label for="textbtn#01">Texto:</label>
+                        <input type="text" name="text" id="textbtn#01" placeholder="https://example.com">
+                        <label for="linkbtn#01">Link:</label>
+                        <input type="text" name="link" id="linkbtn#01" placeholder="https://example.com">
+                    </div>    
+                    <label for="externalbtn#01">External:</label>
+                    <input type="checkbox" name="" id="externalbtn#01">
+                </div>
+                <div>
+                    <div>
+                        <label for="textbtn#01">Texto:</label>
+                        <input type="text" name="text" id="textbtn#01" placeholder="https://example.com">
+                        <label for="linkbtn#01">Link:</label>
+                        <input type="text" name="link" id="linkbtn#01" placeholder="https://example.com">
+                    </div>    
+                    <label for="externalbtn#01">External:</label>
+                    <input type="checkbox" name="" id="externalbtn#01">
+                </div>
+            </div>
+        </div>
+        <div class="lists__container listlinks" style="display: flex;gap: 10px;flex-direction: column;">
+            <label for="link#01">Link 1:</label>
+            <input type="text" name="" id="link#01" placeholder="https://example.com">
+            <label for="link#02">Video:</label>
+            <input type="text" name="" id="link#03" placeholder="https://example.com">
+        </div>
+        <div class="img__upload">
+            <input multiple type="file" name="thumb" id="thumbInput" accept="image/*" onchange="previewImage(event)">
+            <div class="imgs12">
+                <!-- <img loading="lazy" src="https://images.alphacoders.com/139/thumb-1920-1393502.png" alt="" >
+                <img loading="lazy" src="https://images.alphacoders.com/139/thumb-1920-1393502.png" alt=""  >
+                <img loading="lazy" src="https://images.alphacoders.com/139/thumb-1920-1393502.png" alt=""  > -->
+            </div>
+
+        </div>
+        <br>
+        <button type="submit" id="btnSalvar" class="btn__bg">Criar Postagem</button>
+    </form>
+    <div hidden>
+        <form class="postForm" id="postForm__command" data-category="command">
+            <h2>Comandos</h2>
+            <input type="hidden" id="editIndex" value="">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" required>
+            <label for="descrição">Descrição:</label>
+            <textarea id="descrição" rows="3" required></textarea>
+            <label for="conteudo">Conteúdo:</label>
+            <textarea id="conteudo" rows="10" required></textarea>
+            <div class="listcode">
+                <div class="btn__container">
+                    <button title="Adicionar item na lista" type="button" onclick="addlistitem(this)">+</button>
+                    <small>Comandos</small>
+                </div>
+                <div class="listcodes"></div>
+            </div>
+            <div class="listinfo">
+                <div class="btn__container">
+                    <button title="Adicionar item na lista" type="button" onclick="addlistitem(this)">+</button>
+                    <small>Lista</small>
+                </div>
+                <div class="listitems"></div>
+            </div>
+            <div class="img__upload">
+                <input multiple type="file" name="thumb" id="thumbInput" accept="image/*"
+                    onchange="previewImage(event)">
+                <div class="imgs12">
+                    <!-- <img loading="lazy" src="https://images.alphacoders.com/139/thumb-1920-1393502.png" alt="" >
+                <img loading="lazy" src="https://images.alphacoders.com/139/thumb-1920-1393502.png" alt=""  >
+                <img loading="lazy" src="https://images.alphacoders.com/139/thumb-1920-1393502.png" alt=""  > -->
+                </div>
+
+            </div>
+            <br>
+            <button type="submit" id="btnSalvar" class="btn__bg">Criar Postagem</button>
+        </form>
+        <form class="postForm" id="postForm__map" data-category="map">
+            <h2>Mapas</h2>
+            <input type="hidden" id="editIndex" value="">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" required>
+            <label for="descrição">Descrição:</label>
+            <textarea id="descrição" rows="3" required></textarea>
+            <label for="conteudo">Conteúdo:</label>
+            <textarea id="conteudo" rows="10" required></textarea>
+            <div class="listinfo">
+                <div class="btn__container">
+                    <button title="Adicionar item na lista" type="button" onclick="addlistitem(this)">+</button>
+                    <small>Lista</small>
+                </div>
+                <div class="listitems"></div>
+            </div>
+            <div class="listinfo">
+                <div class="listitems" style="display: flex;gap: 10px;flex-direction: column;">
+                    <label for="link#01">Link 1: </label>
+                    <input type="text" name="" id="link#01" placeholder="https://example.com">
+                    <label for="link#02">Link 2: </label>
+                    <input type="text" name="" id="link#02" placeholder="https://example.com">
+                </div>
+            </div>
+            <div class="img__upload">
+                <input multiple type="file" name="thumb" id="thumbInput" accept="image/*"
+                    onchange="previewImage(event)">
+                <div class="imgs12">
+                    <!-- <img loading="lazy" src="https://images.alphacoders.com/139/thumb-1920-1393502.png" alt="" >
+                <img loading="lazy" src="https://images.alphacoders.com/139/thumb-1920-1393502.png" alt=""  >
+                <img loading="lazy" src="https://images.alphacoders.com/139/thumb-1920-1393502.png" alt=""  > -->
+                </div>
+
+            </div>
+            <br>
+            <button type="submit" id="btnSalvar" class="btn__bg">Criar Postagem</button>
+        </form>
+        <form class="postForm" id="postForm__map" data-category="map">
+            <h2>Carousel</h2>
+            <input type="hidden" id="editIndex" value="">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" required>
+            <label for="descrição">Descrição:</label>
+            <textarea id="descrição" rows="3" required></textarea>
+            <div class="listinfo">
+                <div class="listitems" style="display: flex;gap: 10px;flex-direction: column;">
+                    <label for="link#01">Link 1: </label>
+                    <input type="text" name="" id="link#01" placeholder="https://example.com">
+                    <label for="link#02">Link 2: </label>
+                    <input type="text" name="" id="link#02" placeholder="https://example.com">
+                </div>
+            </div>
+            <div class="img__upload">
+                <input multiple type="file" name="thumb" id="thumbInput" accept="image/*"
+                    onchange="previewImage(event)">
+                <div class="imgs12">
+                    <!-- <img loading="lazy" src="https://images.alphacoders.com/139/thumb-1920-1393502.png" alt="" >
+                <img loading="lazy" src="https://images.alphacoders.com/139/thumb-1920-1393502.png" alt=""  >
+                <img loading="lazy" src="https://images.alphacoders.com/139/thumb-1920-1393502.png" alt=""  > -->
+                </div>
+
+            </div>
+            <br>
+            <button type="submit" id="btnSalvar" class="btn__bg">Criar Postagem</button>
+        </form>
+    </div>
+    <h2>Postagens Disponíveis</h2>
+    <div id="posts" class="card__container"></div>
+    <script type="module" src="./adm.js"></script>
+    <!-- Editor.js core -->
+ <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@editorjs/simple-image@latest"></script>
+  <div id="editorjs"></div>
+<script>
+   // Aguarde todos os scripts estarem disponíveis
+    window.addEventListener('load', () => {
+      const editor = new EditorJS({
+        holder: 'editorjs',
+        tools: {
+          header: Header,
+          list: {
+            class: EditorjsList,
+            inlineToolbar: true,
+            config: {
+                defaultStyle: 'unordered'
+            }
+        },
+          image: SimpleImage
+        },
+        placeholder: 'Escreva algo...',
+        autofocus: true,
+        onReady: () => {
+          console.log('Editor.js está pronto!');
+        },
+        onChange: async () => {
+          const content = await editor.save();
+          console.log('Conteúdo atualizado:', content);
+        }
+      });
+    });
+</script>
+
+</body>
+
+</html>

@@ -25,7 +25,7 @@ async function generatePage() {
                     <h4 class="card__title">${post.title}</h4>
                     ${post.code?`<code class="card__code">${post.code[0]}</code>`:""}
                     <div class="view-card__image">
-                        <img src="${imageUrl}" alt="${post.title}" class="card__image">
+                        <img loading="lazy" src="${imageUrl}" alt="${post.title}" class="card__image">
                     </div>
                     <div class="card__details">
                         <p class="card__description">${post.description}</p>

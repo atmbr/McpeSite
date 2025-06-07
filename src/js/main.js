@@ -184,7 +184,7 @@ async function initFooterFeatures() {
   
             const galeryContainer = mapDiv.querySelector(".galery__items > div");
             galeryContainer.innerHTML = result.img
-              .map(src => `<div class="galery__item"><img src="${src}" alt="${result.title}"></div>`)
+              .map(src => `<div class="galery__item"><img loading="lazy" src="${src}" alt="${result.title}"></div>`)
               .join("");
   
             galeryContainer.querySelector("div:nth-child(1)")?.classList.add("active");

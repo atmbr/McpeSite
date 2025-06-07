@@ -170,7 +170,7 @@ searchInputs.forEach(input => {
       postagem += `
         <a href="/post?n=${encodeURIComponent(post.title?.toLowerCase() || post.code?.toLowerCase())}" class="result__item" data-categoria="${post.type}">
           <div style="width: var(--size); height: auto; overflow: hidden; position: relative;">
-            <img src="${imageUrl}" alt="${post.title || post.code}" class="result__img">
+            <img loading="lazy" src="${imageUrl}" alt="${post.title || post.code}" class="result__img">
           </div>
           <div class="result__info">
             <h3 class="result__title">${post.title || post.code}</h3>

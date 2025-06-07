@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 700px; margin: 20px auto; padding: 10px; }
+  label, strong { display: block; margin-top: 10px; font-weight: bold; }
+  input[type=text], textarea, select { width: 100%; padding: 6px; margin-top: 4px; box-sizing: border-box; }
+  button { margin-top: 10px; padding: 6px 12px; cursor: pointer; }
+  .list-container, .btn-container { border: 1px solid #ccc; padding: 10px; margin-top: 10px; }
+  .list-items div, .btn-items > div { margin-bottom: 8px; }
+  .btn-items > div { border: 1px solid #ddd; padding: 8px; }
+  .btn-inline { display: flex; gap: 10px; align-items: center; }
+  .btn-inline label { margin: 0; }
+  .thumb-preview {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 5px;
+  }
+  .thumb-preview .thumb-item {
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 100px;
+    height: 80px;
+    cursor: pointer;
+  }
+  .thumb-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+  }
+  .thumb-preview .remove-btn {
+    position: absolute;
+    top: 1px;
+    right: 2px;
+    background: rgba(255, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .post-list {
+    margin-top: 30px;
+    border-top: 2px solid #333;
+    padding-top: 15px;
+  }
+  .post-item {
+    border: 1px solid #aaa;
+    padding: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    background: #f9f9f9;
+  }
+  .post-item h3 {
+    margin: 0 0 5px 0;
+  }
+  .post-item .thumbs {
+    display: flex;
+    gap: 5px;
+  }
+  .post-item .thumbs img {
+        width: 150px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 3px;
+    aspect-ratio: 16 / 9;
+  }
+.mode__carousel label[for="conteudo"],.mode__carousel #conteudo,.mode__carousel .list-container,.mode__carousel .links,.mode__map .commands, .mode__map .btn-container, .mode__command .btn-container, .mode__command #linkDownload, .mode__command label[for="linkDownload"]{
+    display: none;
+}
+
+    </style>
+</head>
+<body>
+
+<h2>Formulário com imagens e edição</h2>
+<label for="postType">Tipo da Postagem:</label>
+<select id="postType" required>
+  <option value="">Selecione um tipo</option>
+  <option value="map">Map</option>
+  <option value="command">Command</option>
+  <option value="carousel">Carousel</option>
+</select>
+
+<form id="postForm" class="mode__carousel">
+  <label for="titulo">Título:</label>
+  <input type="text" id="titulo" required />
+
+  <label for="descricao">Descrição:</label>
+  <textarea id="descricao" rows="3" required></textarea>
+
+  <label for="conteudo">Conteúdo:</label>
+  <textarea id="conteudo" rows="8"></textarea>
+
+  <!-- Lista de comandos -->
+  <div class="list-container commands">
+    <strong>Lista Comandos:</strong>
+    <button type="button" id="addCommandBtn">+ Adicionar comando</button>
+    <div class="list-items" id="commandsList"></div>
+  </div>
+
+  <!-- Lista de itens -->
+  <div class="list-container items">
+    <strong>Lista Itens:</strong>
+    <button type="button" id="addItemBtn">+ Adicionar item</button>
+    <div class="list-items" id="itemsList"></div>
+  </div>
+
+  <!-- Botões -->
+  <div class="btn-container">
+    <strong>Botões:</strong>
+    <button type="button" id="addBtnBtn">+ Adicionar botão</button>
+    <div class="btn-items" id="btnList"></div>
+  </div>
+
+  <!-- Links e vídeo -->
+  <div style="margin-top:20px;" class="links">
+    <label for="linkDownload">Link Download:</label>
+    <input type="text" id="linkDownload" placeholder="https://example.com" />
+
+    <label for="linkVideo">Link Vídeo:</label>
+    <input type="text" id="linkVideo" placeholder="https://example.com" />
+  </div>
+
+  <!-- Upload de thumbs -->
+  <div style="margin-top:20px;">
+    <label for="thumbInput">Imagens (Thumbs):</label>
+    <input type="file" id="thumbInput" multiple accept="image/*" />
+    <div class="thumb-preview" id="thumbPreview"></div>
+  </div>
+
+  <button id="uploadBtn" type="submit" style="margin-top:20px;">Salvar Postagem</button>
+</form>
+
+<hr />
+
+<section class="post-list" id="postList">
+  <h2>Postagens Criadas (clique para editar)</h2>
+</section>
+    <script type="module" src="./teste.js"></script>
+</body>
+</html>

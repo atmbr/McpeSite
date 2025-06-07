@@ -10,7 +10,7 @@ async function generatePage(post, type) {
             <div class="card">
                 ${post.code ? `<code class="card__code">${post.code[0]}</code>` : ""}
                 <div class="view-card__image">
-                    <img src="${imageUrl}" alt="${post.title}" class="card__image">
+                    <img loading="lazy" src="${imageUrl}" alt="${post.title}" class="card__image">
                 </div>
                 <div class="card__details">
                 <div>
@@ -33,7 +33,7 @@ async function generatePage(post, type) {
               <a href="../../page/post.html?article=${encodeURIComponent(post.title?.toLowerCase() || post.code[0]?.toLowerCase())}"
                  class="result__item" data-categoria="${post.type}">
                 <div style="width: var(--size); height: auto; overflow: hidden; position: relative;">
-                  <img src="${imageUrl}" alt="${post.title || post.code[0]}" class="result__img">
+                  <img loading="lazy" src="${imageUrl}" alt="${post.title || post.code[0]}" class="result__img">
                 </div>
                 <div class="result__info">
                   <h3 class="result__title">${post.title || post.code[0]}</h3>
