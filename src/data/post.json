@@ -1,5 +1,5 @@
 {
-  "maps": [
+  "map": [
   { 
     "id": 1,
     "title": "Redstone Puzzle Map",
@@ -165,7 +165,7 @@
     "type": "map"
   }
 ],
-  "commands": [
+  "command": [
     {
       "id": 9218521,
       "title": "Dar Redstone",
